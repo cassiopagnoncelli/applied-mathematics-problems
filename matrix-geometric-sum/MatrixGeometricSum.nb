@@ -1,0 +1,148 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3895,        138]
+NotebookOptionsPosition[      3350,        115]
+NotebookOutlinePosition[      3687,        130]
+CellTagsIndexPosition[      3644,        127]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Matrix geometric sum", "Title",
+ CellChangeTimes->{{3.629108933389702*^9, 3.6291089486456738`*^9}}],
+
+Cell["Given a matrix M", "Subsubtitle",
+ CellChangeTimes->{{3.629108941705513*^9, 3.629108956107523*^9}, 
+   3.629109152915642*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"M", "=", GridBox[{
+     {"0", "1", "1", "1"},
+     {"1", "0", "0", "1"},
+     {"1", "0", "0", "0"},
+     {"1", "1", "0", "0"}
+    }]}], ";"}]], "Input",
+ CellChangeTimes->{{3.629102950169654*^9, 3.629103048228441*^9}, {
+   3.629108930078773*^9, 3.629108948647641*^9}, 3.629109150562977*^9, 
+   3.629109221971538*^9}],
+
+Cell[TextData[{
+ "we want to calculate ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["M", "*"], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"I", "+", "M", "+", 
+       SuperscriptBox["M", "2"], "+", 
+       SuperscriptBox["M", "3"], "+"}], "..."}], "+", 
+     SuperscriptBox["M", "n"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", whose result is"
+}], "Subsubtitle",
+ CellChangeTimes->{{3.629108958853269*^9, 3.629109031036405*^9}, {
+  3.6291091055898542`*^9, 3.629109111416411*^9}, {3.6291091428530293`*^9, 
+  3.629109148303399*^9}, {3.629109557494705*^9, 3.629109573362056*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"I", "-", "M"}], ")"}], 
+    RowBox[{"-", "1"}]], 
+   RowBox[{"(", 
+    RowBox[{"I", "-", 
+     SuperscriptBox["M", 
+      RowBox[{"n", "+", "1"}]]}], ")"}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Subtitle",
+ CellChangeTimes->{{3.629109013720787*^9, 3.629109052796835*^9}, {
+  3.629109085227866*^9, 3.629109138616809*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"GeometricSum", "[", 
+   RowBox[{"M_", ",", "n_"}], "]"}], ":=", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"I", "-", "M"}], ")"}], 
+     RowBox[{"-", "1"}]], 
+    RowBox[{"(", 
+     RowBox[{"I", "-", 
+      SuperscriptBox["M", 
+       RowBox[{"n", "+", "1"}]]}], ")"}]}],
+   TraditionalForm]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GeometricPowerSum", "[", "M_", "]"}], ":=", 
+  RowBox[{"GeometricSum", "[", 
+   RowBox[{"M", ",", 
+    RowBox[{
+     RowBox[{"Dimensions", "[", "M", "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.6291091712770433`*^9, 3.629109199512521*^9}, {
+  3.6291094891881437`*^9, 3.629109489884493*^9}}],
+
+Cell[TextData[{
+ "Is it possible to calculate ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["M", "*"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " still in linear time?"
+}], "Subsubtitle",
+ CellChangeTimes->{{3.629109538638577*^9, 3.629109548127043*^9}, {
+  3.629109596783143*^9, 3.629109613330119*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 594},
+WindowMargins->{{170, Automatic}, {Automatic, 54}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 105, 1, 90, "Title"],
+Cell[687, 25, 131, 2, 28, "Subsubtitle"],
+Cell[821, 29, 351, 10, 80, "Input"],
+Cell[1175, 41, 613, 17, 31, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1813, 62, 438, 13, 58, "Subtitle"],
+Cell[2254, 77, 749, 23, 59, "Input"],
+Cell[3006, 102, 316, 9, 29, "Subsubtitle"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
