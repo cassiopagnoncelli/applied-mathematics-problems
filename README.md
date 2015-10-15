@@ -22,6 +22,12 @@ Files terminated by .R or .r. Run them from within RStudio or in R shell
 > R < file.R
 ```
 
+## Matlab
+
+!(Matlab)[http://s14.postimg.org/5roiy3lpd/Matlab.jpg]
+
+Files terminated by .m, not to be confused by Maple's command line source files. Run from within Matlab.
+
 ## Ruby
 
 !(Ruby)[http://s2.postimg.org/wkjcfqq0p/ruby.png]
@@ -44,20 +50,14 @@ Run them by typing
 > python file.py
 ```
 
-## Maple
-
-!(Maple)[http://s27.postimg.org/7lhjbspcz/Maple_14_logo.jpg]
-
-Files terminated by .mw. Some of them must be run from within Maple (.mw), others (.m) are mandatory to run from its shell (command-line mode).
-
-## Matlab
-
-!(Matlab)[http://s14.postimg.org/5roiy3lpd/Matlab.jpg]
-
-Files terminated by .m, not to be confused by Maple's command line source files. Run from within Matlab.
-
 ## Maxima
 
 !(Maxima)[http://s23.postimg.org/kzlvhxaw7/wxmaxima.png]
 
 Files terminated by .wxm. There is a nice interface to the usual, command-line Maxima called WxMaxima, which can handle .wxm files.
+
+## C/C++
+
+Least but not last, a few experiments are coded in C or C++. 
+
+They are coded in ANSI C, which should run on any modern C compiler, or C++, and should run at least in any Linux distribution shipped with a C++ compiler, usually g++. In some cases, you can also use a shipped Makefile to ease the compiling-linking treadmill.
