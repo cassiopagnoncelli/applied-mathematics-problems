@@ -1,0 +1,211 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7358,        201]
+NotebookOptionsPosition[      6790,        176]
+NotebookOutlinePosition[      7125,        191]
+CellTagsIndexPosition[      7082,        188]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Vidale-Wolfe adverstising model\
+\>", "Title",
+ CellChangeTimes->{{3.640588520619967*^9, 3.6405885390884132`*^9}}],
+
+Cell["Parameters", "Subtitle",
+ CellChangeTimes->{{3.6405877195275784`*^9, 3.640587744719391*^9}}],
+
+Cell["Rate of adverstising function", "Subsubtitle",
+ CellChangeTimes->{{3.640587594964034*^9, 3.64058760306227*^9}, 
+   3.640587745750884*^9, {3.640588584995079*^9, 3.64058858608079*^9}, {
+   3.640589317623578*^9, 3.640589319610997*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"u", "[", "t_", "]"}], "=", "t"}], ";"}]], "Input",
+ CellChangeTimes->{{3.640587587995494*^9, 3.640587589650172*^9}, 
+   3.640587676385735*^9, {3.640588186868309*^9, 3.6405881910027237`*^9}, {
+   3.640589219878529*^9, 3.640589239322122*^9}, 3.640589293261673*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Model", "Subtitle",
+ CellChangeTimes->{{3.6405891280132227`*^9, 3.640589132281543*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Evaluate", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"x", "[", "t", "]"}], ",", 
+         RowBox[{"y", "[", "t", "]"}]}], "}"}], "/.", "\[IndentingNewLine]", 
+       RowBox[{"NDSolve", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"x", "[", "0", "]"}], "\[Equal]", "x0"}], ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"x", "'"}], "[", "t", "]"}], "\[Equal]", 
+            RowBox[{
+             RowBox[{"p", " ", 
+              RowBox[{"u", "[", "t", "]"}], 
+              RowBox[{"Sqrt", "[", 
+               RowBox[{"1", "-", 
+                RowBox[{"x", "[", "t", "]"}]}], "]"}]}], "-", 
+             RowBox[{"d", " ", 
+              RowBox[{"x", "[", "t", "]"}]}]}]}]}], "}"}], ",", "x", ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "1"}], "}"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"Filling", "\[Rule]", "Bottom"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p", ",", "0.8", ",", "\"\<Brand Strengh (p)\>\""}], "}"}], ",",
+      "0", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"d", ",", "0.05", ",", "\"\<Market share decay (d)\>\""}], 
+      "}"}], ",", "0", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x0", ",", "0.1", ",", "\"\<Initial market share (x0)\>\""}], 
+      "}"}], ",", "0", ",", "1"}], "}"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6405880948142443`*^9, 3.6405881578560677`*^9}, {
+  3.6405882412549*^9, 3.640588268899004*^9}, {3.640588405589985*^9, 
+  3.64058840725648*^9}, {3.640588700469784*^9, 3.640588899332258*^9}, {
+  3.640588948809675*^9, 3.640588956480091*^9}, {3.640589077335389*^9, 
+  3.64058908243908*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 0.05, $CellContext`p$$ = 
+    0.8, $CellContext`x0$$ = 0.1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`p$$], 0.8, "Brand Strengh (p)"}, 0, 1}, {{
+       Hold[$CellContext`d$$], 0.05, "Market share decay (d)"}, 0, 1}, {{
+       Hold[$CellContext`x0$$], 0.1, "Initial market share (x0)"}, 0, 1}}, 
+    Typeset`size$$ = {360., {113., 118.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`p$10742$$ = 0, $CellContext`d$10743$$ = 
+    0, $CellContext`x0$10744$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = 0.05, $CellContext`p$$ = 
+        0.8, $CellContext`x0$$ = 0.1}, "ControllerVariables" :> {
+        Hold[$CellContext`p$$, $CellContext`p$10742$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$10743$$, 0], 
+        Hold[$CellContext`x0$$, $CellContext`x0$10744$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        Evaluate[
+         ReplaceAll[{
+           $CellContext`x[$CellContext`t], 
+           $CellContext`y[$CellContext`t]}, 
+          
+          NDSolve[{$CellContext`x[0] == $CellContext`x0$$, 
+            Derivative[
+             1][$CellContext`x][$CellContext`t] == $CellContext`p$$ \
+$CellContext`u[$CellContext`t] 
+              Sqrt[1 - $CellContext`x[$CellContext`t]] - $CellContext`d$$ \
+$CellContext`x[$CellContext`t]}, $CellContext`x, {$CellContext`t, 0, 
+            1}]]], {$CellContext`t, 0, 1}, PlotRange -> {{0, 1}, {0, 1}}, 
+        Filling -> Bottom], 
+      "Specifications" :> {{{$CellContext`p$$, 0.8, "Brand Strengh (p)"}, 0, 
+         1}, {{$CellContext`d$$, 0.05, "Market share decay (d)"}, 0, 
+         1}, {{$CellContext`x0$$, 0.1, "Initial market share (x0)"}, 0, 1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{407., {182., 189.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.640588165378854*^9, 3.640588209409499*^9, 3.640588270357362*^9, {
+   3.640588925346385*^9, 3.640588957648244*^9}, 3.640589098784677*^9, {
+   3.640589227539156*^9, 3.640589241944234*^9}, 3.6405892985294523`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440, 853},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 124, 3, 90, "Title"],
+Cell[706, 27, 98, 1, 49, "Subtitle"],
+Cell[807, 30, 238, 3, 29, "Subsubtitle"],
+Cell[1048, 35, 309, 6, 32, "Input"],
+Cell[CellGroupData[{
+Cell[1382, 45, 93, 1, 49, "Subtitle"],
+Cell[CellGroupData[{
+Cell[1500, 50, 2358, 62, 187, "Input"],
+Cell[3861, 114, 2889, 57, 388, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
