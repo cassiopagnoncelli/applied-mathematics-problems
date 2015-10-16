@@ -26,7 +26,7 @@ Files terminated by .R or .r. Run them from within RStudio or in R shell
 Files terminated by .m, not to be confused by Maple's command line source files. Run from within Matlab.
 
 
-<h2><img src="(http://s2.postimg.org/wkjcfqq0p/ruby.png" height="32" /> Ruby</h2>
+<h2><img src="http://s2.postimg.org/wkjcfqq0p/ruby.png" height="32" /> Ruby</h2>
 
 Files terminated by .rb. Run them by typing
 
