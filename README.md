@@ -8,7 +8,7 @@ Solution to all the problems are in one (or more) of the above languages.
 
 ## Mathematica
 
-!(Mathematica)[http://s24.postimg.org/e3cx78o1x/Wolfram_Mathematica9_Logo_1440x470_Trans_BG.png?raw=true]
+[Mathematica]: http://s24.postimg.org/e3cx78o1x/Wolfram_Mathematica9_Logo_1440x470_Trans_BG.png "Mathematica"
 
 Files terminated by .nb. Run them from within Mathematica, avoid Mathematica's "math" shell.
 
