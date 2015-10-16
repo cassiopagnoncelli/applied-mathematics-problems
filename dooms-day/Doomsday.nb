@@ -1,0 +1,1072 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='%s' *)
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       131,          6]
+NotebookDataLength[     30871,       1066]
+NotebookOptionsPosition[     23793,        845]
+NotebookOutlinePosition[     24320,        869]
+CellTagsIndexPosition[     24277,        866]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+
+Cell[CellGroupData[{Cell["Programs for the Doomsday Rule", "Title"],
+
+Cell["\<\
+The cells below contain programs that implement the Doomsday Rule in \
+Mathematica. If your interested in seeing these routines, open up the cells \
+below. If not, go on the section marked \"Random Dates-Practcing the Doomsday \
+Rule.\"\
+\>", "Text"],
+
+Cell[CellGroupData[{Cell["Gregorian Subroutines", "Subsection"],
+
+Cell["\<\
+The first routine tells us whether or not y is a leap year under the \
+Gregorian calendar. GregLeapYear[y] is 1 if y is a leap year and 0 otherwise.\
+\
+\>", "Text"],
+
+Cell["\<\
+Off[General::spell];
+Off[General::spell1]; (*Turn off spelling correction.*)\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+GregLeapYear[y_]:=
+If[
+ Mod[y,400]==0 || Mod[y,100]!=0 && Mod[y,4]==0,
+ 1,0]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+GregLeapYear[1992]
+GregLeapYear[2000]
+GregLeapYear[1900]\
+\>", "Input"],
+
+Cell["Table[GregLeapYear[y],{y,1600,2400,100}]", "Input"],
+
+Cell["Table[GregLeapYear[y],{y,1900,1916}]", "Input"],
+
+Cell["\<\
+GregMonthDD[m,y] gives a day in the month m and year y that is a Doomsday.\
+\>", "Text"],
+
+Cell["\<\
+GregMonthDD[m_,y_]:=If[Mod[m,2]==0,m,m+4]
+GregMonthDD[1,y_]=31+GregLeapYear[y];
+GregMonthDD[2,y_]=28+GregLeapYear[y];
+GregMonthDD[9,y_]=5;
+GregMonthDD[11,y_]=7;\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+Table[GregMonthDD[m,1992],{m,1,12}]
+Table[GregMonthDD[m,1994],{m,1,12}]\
+\>", "Input"],
+
+Cell["\<\
+The routine GregCenturyDD[y] gives the Doomsday for the first year in the \
+century of y. For example, GregCenturyDD[1976] is the Doomsday of 1900.\
+\>", "Text"],
+
+Cell["\<\
+GregCenturyDD[y_]:=
+Mod[2+5 Mod[Floor[y/100],4],7]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+GregCenturyDD[1976]
+Table[GregCenturyDD[y],{y,1600,2300,100}]\
+\>", "Input"],
+
+Cell["The routine GregYearDD[y] gives the Doomsday for the year y.", "Text"],
+
+Cell["\<\
+GregYearDD[y_]:=
+Mod[
+ GregCenturyDD[y]+Mod[y,100]+Floor[Mod[y,100]/4],7]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["Table[GregYearDD[y],{y,1976,2003}]", "Input"],
+
+Cell["\<\
+The ultimate routine that will be used here is GregDay. GregDay[3,19,1994] \
+gives the day of the week of March 19, 1994. The answer is a number between 0 \
+and 6. \
+\>", "Text"],
+
+Cell["\<\
+GregDay[month_,day_,year_]:=
+Mod[GregYearDD[year]+day-GregMonthDD[month,year],7]
+ \
+\>", "Input",
+ InitializationCell->True],
+
+Cell["GregDay[3,19,1994]", "Input"]}, Open]],
+
+Cell[CellGroupData[{Cell["Julian Subroutines", "Subsection"],
+
+Cell["\<\
+Most of the routines here are Julian analogs of the Gregorian subroutines.\
+\>", "Text"],
+
+Cell["\<\
+JulLeapYear[y_]:=
+If[Mod[y,4]==0,1,0]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+JulMonthDD[m_,y_]:=If[Mod[m,2]==0,m,m+4]
+JulMonthDD[1,y_]=31+JulLeapYear[y];
+JulMonthDD[2,y_]=28+JulLeapYear[y];
+JulMonthDD[9,y_]=5;
+JulMonthDD[11,y_]=7;\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["JulCenturyDD[y_]:=Mod[6 Floor[y/100],7]", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+BCFixer[y] turns a negative (i.e. BC) date into an equivalent positive date. \
+It does this by adding an appropriate multiple of 28 and adding 1 to allow \
+for the fact that there was no year 0.\
+\>", "Text"],
+
+Cell["BCFixer[y_]:=y-28 Floor[y/28]+1", "Input",
+ InitializationCell->True],
+
+Cell["BCFixer[-44]", "Input"],
+
+Cell["\<\
+JulYearDD[y_]:=
+If[y>0,
+ Mod[JulCenturyDD[y]+Mod[y,100]+Floor[Mod[y,100]/4],7],
+ JulYearDD[BCFixer[y]]]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+JulDay[month_,day_,year_]:=
+Mod[JulYearDD[year]+day-JulMonthDD[month,year],7]
+ \
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+To get the day of the week of September 20, 1519 under the Julian calendar, \
+use the following command.\
+\>", "Text"],
+
+Cell["JulDay[9,20,1519]", "Input"]}, Open]],
+
+Cell[CellGroupData[{Cell["Main routines", "Subsection"],
+
+Cell["\<\
+The routines in this section decide whether the Gregorian or Julian calendar \
+should be used. Change gives the date of the changeover from Julian to \
+Gregorian.\
+\>", "Text"],
+
+Cell["Change={10,15,1582};", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+Gregorian=1;Julian=0;
+Cal[month_,day_,year_]:=
+If[(year>Change[[3]])||
+   (year==Change[[3]]) && (month>Change[[1]])||
+   (year==Change[[3]]) && (month==Change[[1]]) && (day>=Change[[2]]),
+   Gregorian,Julian]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+DayNumber[month_,day_,year_]:=
+If[Cal[month,day,year]==Gregorian,
+   GregDay[month,day,year],
+   JulDay[month,day,year]]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+Clear[Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday]
+DaysOfWeek={Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday};\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+CalDay[month_,day_,year_]:=
+ DaysOfWeek[[DayNumber[month,day,year]+1]]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+If you want the day of the week of January 1, 2000, use the following command.\
+\>", "Text"],
+
+Cell["CalDay[1,1,2000]", "Input"],
+
+Cell["\<\
+Here is  how to use the English system with Gregorian Changeover day \
+September 13, 1752.\
+\>", "Text"],
+
+Cell["\<\
+CalDay[4,23,1616] (*Cervantes' death day*)
+Change={9,13,1752} (*Change to English system*)
+CalDay[4,23,1616] (*Shakespeare's death day*)
+Change={10,15,1582} (*Change back to Continental system*)\
+\>", "Input"],
+
+Cell["  ", "Text"]}, Open]]}, Open]],
+
+Cell[CellGroupData[{Cell["Random Dates", "Subsection"],
+
+Cell["\<\
+Here is a routine that produces  examples for practicing the Doomsday rule.\
+\>", "Text"],
+
+Cell["\<\
+Clear[LeapYear,ml,monthlength,randdomdate]
+
+LeapYear[x_/;x>=0]:=
+ If[x>Change[[3]],GregLeapYear[x],JulLeapYear[x]]
+LeapYear[x_/;x<0]:=LeapYear[x+Ceiling[-x/28] 28+1]
+
+ml={31,28,31,30,31,30,31,31,30,31,30,31};
+
+monthlength[m_,y_]:=
+ ml[[m]]+ If[LeapYear[y]==1 && (m==2),1,0]
+ 
+randomdate[a_,b_]:=Module[{m,d,y},
+ m=Random[Integer,{1,12}];
+ y=Random[Integer,{a,b}];
+ d=Random[Integer,{1,monthlength[m,y]}];
+ {m,d,y}]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+Here are some examples to practice with. The examples here will all be \
+between 1900 and 1999.\
+\>", "Text"],
+
+Cell[CellGroupData[{Cell["randomdate[1900,1999]", "Input",
+ Editable->False,
+ Evaluatable->False],
+
+Cell[OutputFormData["\<\
+{4, 24, 1946}\
+\>", "\<\
+{4, 24, 1946}\
+\>"], "Output",
+ Editable->False]}, Open]],
+
+Cell["I worked this out by hand, and I came up with ", "Text",
+ Editable->False],
+
+Cell["Wednesday.", "Subtitle",
+ Editable->False],
+
+Cell["Here's a check with Mathematica.", "Text",
+ Editable->False],
+
+Cell[CellGroupData[{Cell["CalDay[4,24,1946]", "Input",
+ Editable->False,
+ Evaluatable->False],
+
+Cell[OutputFormData["\<\
+Wednesday\
+\>", "\<\
+Wednesday\
+\>"], "Output",
+ Editable->False]}, Open]],
+
+Cell["Now you take over and practice the Doomsday Rule.", "Text"],
+
+Cell["randomdate[1900,1999]", "Input"],
+
+Cell["\<\
+Run the cell above to get a random date. Use the Doomsday Rule to compute the \
+day of the week by hand, then check yourself with the CalDay command. Repeat \
+until you get really good at it.\
+\>", "Text"]}, Open]],
+
+Cell[CellGroupData[{Cell["Famous Dates", "Subsection"],
+
+Cell["\<\
+The space shuttle Challenger exploded on January 28, 1986. What day of the \
+week was that?\
+\>", "Text"],
+
+Cell["CalDay[1,28,1986]", "Input"],
+
+Cell["\<\
+World War II started on September 1, 1939 with the German invasion of Poland. \
+What day of the week was it?\
+\>", "Text"],
+
+Cell["CalDay[9,1,1939]", "Input"],
+
+Cell["\<\
+The first atomic bomb used in combat was  dropped on Hiroshima on August 8, \
+1945. What day of the week was it?\
+\>", "Text"],
+
+Cell["CalDay[8,6,1945]", "Input"],
+
+Cell["Compute the day of the week of your birthday.", "Text"],
+
+Cell["\<\
+Compute the day of the week of the birthday of someone in your family other \
+than yourself.\
+\>", "Text"],
+
+Cell["\<\
+Here are some  ``famous'' birthdays. Find the day of the week of each one.
+
+August 29, 1950.
+October 4, 1952.
+June 25, 1976.\
+\>", "Text"],
+
+Cell["\<\
+In 1966, there was exactly one Saturday between November 10 and November 16. \
+Which day was it?\
+\>", "Text"],
+
+Cell["\<\
+In the early morning hours of June 17, 1972, four men were arrested while \
+breaking into Democratic party headquarters in the Watergate complex in \
+Washington, D.C. What day of the week was it?\
+\>", "Text"],
+
+Cell["\<\
+On the night of August 8, 1974, Richard M. Nixon announced that he would \
+resign the Presidency. 
+The resignation became official on the next day. What day of the week was the \
+latter?\
+\>", "Text"],
+
+Cell["\<\
+During a Monday night football game in early December  1980, Howard Cosell \
+announced to a nationwide television audience that John Lennon had just been \
+assasinated. What day was it? (Hint: It was after December 3 but before \
+December 14.)\
+\>", "Text"],
+
+Cell["\<\
+The Japanese attack on Pearl Harbor happened on the first Sunday in December, \
+1941. What day was it?\
+\>", "Text"],
+
+Cell["\<\
+Sarah Bernhardt appeared  at the Calumet Theater on May 30, 1911.
+What day of the week was it?\
+\>", "Text"],
+
+Cell["\<\
+World War I started on August 4, 1914, and ended on November 11, 1918. Find \
+the days of the week of these dates.\
+\>", "Text"],
+
+Cell["\<\
+On December 5, 1933, the 21st Amendment to the U.S. Constitution was \
+ratified. What was the purpose of this amendment, and what day of the week \
+was it?\
+\>", "Text"],
+
+Cell["\<\
+On May 26, 1959, Harvey Haddix, a pitcher for the Pittsburgh Pirates, pitched \
+twelve perfect innings against the Milwaukee Braves. Despite this amazing \
+performance, he lost the game in the 13th inning. What day of the week was it?\
+\>", "Text"],
+
+Cell["\<\
+On April 8, 1974, Hank Aaron hit the 715th home run of career, and thereby \
+broke a major league record that had been held by Babe Ruth. What day of the \
+week was it?\
+\>", "Text"],
+
+Cell[TextData[{
+ "In the book ",
+ StyleBox["October 1964",
+  FontSlant->"Italic"],
+ ", David Halberstam chronicles the 1964 major league baseball season. The \
+book is very well written, but there are some minor errors in the accounts of \
+the last week of the pennant races. On page 299, he writes, ``On Sunday, \
+September 29, Tony Kubek had a frustrating day at the plate ... .'' On page \
+307, he writes, ``On Monday, September 28, the Phillies went into St. Louis \
+for a three-game series.'' At least one of these dates is clearly wrong. \
+Which one?"
+}], "Text"],
+
+Cell["\<\
+The movie ``The Gunslinger'' has been featured on ``Mystery Science Theater \
+3000.'' In the movie, the words \"Friday, May 21, 1878\" are imposed on the \
+opening scene. Did the scriptwriter get the day of the week correct?\
+\>", "Text"],
+
+Cell["\<\
+In the movie ``Demolition Man'', the date August 3, 2032 is identified as a \
+Monday. Is this correct?\
+\>", "Text"],
+
+Cell["\<\
+The ``Star Trek: Deep Space Nine'' episode entitled ``Past Tense'' is set in \
+the 21st century. In one scene, a calendar shows the date as Friday, August \
+30, 2030. Is the day of week correct?\
+\>", "Text"],
+
+Cell[TextData[{
+ "In the book ",
+ StyleBox["Fried Green Tomatoes at the Whistle Stop Cafe",
+  FontSlant->"Italic"],
+ ",\nan elderly woman named Virginia Threadgoode recalls events from her \n\
+distant past.  On page 12, she states, ``Some people thought it started the \
+day she met Ruth, but I think it started that Sunday dinner, April the first, \
+1919, the same year Leona married John Justice.'' Explain why this\n\
+recollection is in error."
+}], "Text"],
+
+Cell["\<\
+Let us assume that Virgina Threadgoode was correct about the
+day of the week (Sunday) and the day of the year (April 1) in the 
+passage in the previous problem. If so, she incorrectly remembered the
+year. Find a year between 1915 and 1921 when
+April 1 occurred on a Sunday.\
+\>", "Text"],
+
+Cell["\<\
+Here are some famous Civil War dates. Compute the day of the week of each one.
+
+Confederates fire on Fort Sumter: April 20, 1861.
+The first day of the Battle of Gettysburg: July 1, 1863
+Lee surrenders at Appomatox: April 10, 1865.\
+\>", "Text"],
+
+Cell["\<\
+Each of the following days is the date of the assasination
+of some historical figure. Find the day of the week and identify the person
+who was assasinated.
+
+(a) April 14, 1865.
+(b) November 22, 1963.
+(c) April 4, 1968.
+(d) June 5, 1968.
+(e) March 15, 44 B.C.\
+\>", "Text"],
+
+Cell["\<\
+Cervantes and Shakespeare both died on April 23, 1616. However, Cervantes \
+died on a Saturday, and Shakespeare died on a Tuesday. Explain.\
+\>", "Text"],
+
+Cell["\<\
+According to legend, the ancient Greek philosopher Thales predicted that \
+there would be a total eclipse of the Sun on May 28, 585 B.C. What day of the \
+week was that?\
+\>", "Text"],
+
+Cell["\<\
+Columbus ``discovered'' America on October 12, 1492. What day of the week was \
+it?\
+\>", "Text"],
+
+Cell["\<\
+Fermat announced his ``little theorem'' in a letter dated October 18, 1640. \
+What day of the week was it?\
+\>", "Text"],
+
+Cell["\<\
+In decreeing his calendar change, Pope Gregory XIII declared that the days of \
+October 5--14, 1582, would be omitted. Thus the last day of the Julian \
+Calendar was October 4, 1582. What day of the week was it? What day of the \
+week was October 15, 1582?\
+\>", "Text"],
+
+Cell["\<\
+As any English schoolboy (or schoolgirl) can tell you, The Battle of Hastings \
+took place on October 14, 1066. What day of the week was it?\
+\>", "Text"],
+
+Cell["\<\
+According to Archbishop Ussher, the first day of creation was October 23, \
+4004 B.C. What day of the week was it?\
+\>", "Text"],
+
+Cell["\<\
+According to legend, Cleopatra committed suicide on August 30, 30 B.C. What \
+day of the week was it?\
+\>", "Text"],
+
+Cell["", "Text"]}, Open]],
+
+Cell[CellGroupData[{Cell["The Changeover to the Gregorian Calendar", "Subsection"],
+
+Cell["\<\
+The Julian calendar was instituted by Julius Caesar in 45 B.C., and it was \
+used throughout Europe until 1582. Under the Julian system, every year \
+divisible by 4 is a leap year. In 1582, Pope Gregory instituted what is now \
+called the Gregorian Calendar. He modified by the Julian Calendar by \
+decreeing that century years (such as 1600, 1700, etc.) would be leap years \
+if and only if they are divisible by 400. For example, 1900 was not a leap \
+year, 2000 will be a leap year, and 2100 will not be a leap year. Pope \
+Gregory also decreed that the days from October 5, 1582 to October 14, 1582 \
+would be omitted. Thus Thursday, October 4, 1582 was followed by Friday, \
+October 15, 1582.\
+\>", "Text"],
+
+Cell["\<\
+CalDay[10,4,1582]
+CalDay[10,15,1582]\
+\>", "Input"],
+
+Cell["\<\
+The Gregorian Calendar was adopted immediately by the Catholic countries \
+Italy, France, and Spain. Other countries adopted the Gregorian calendar at \
+later dates. For example, Britain and the American colonies made the change \
+in 1752, when they omitted the dates September 3-13. In Russia, the change \
+was made in 1918, shortly after the \"October Revolution\" of November 1917. \
+Sweden made a gradual changeover to the Gregorian calendar by omitting all \
+leap years between 1700 and 1744.
+
+The different calendar systems sometimes lead to international \
+misunderstandings. For example, during the Napoleonic wars, the Russian \
+military agreed to send troops to Prussia. Unfortunately, the troops arrived \
+11 days later than they were expected.\
+\>", "Text"],
+
+Cell["\<\
+In the programs in this notebook, the changeover date is held in the variable \
+\"Change\".\
+\>", "Text"],
+
+Cell["Change", "Input"],
+
+Cell["\<\
+All dates before Change are calculated with the Julian calendar, and all \
+dates after Change are given in the Gregorian calendar. By default, Change is \
+set to be October 14, 1582. You can reset Change to some other date if you \
+like. For example, here is how to use the English system with Gregorian \
+Changeover day September 13, 1752.\
+\>", "Text"],
+
+Cell["\<\
+CalDay[4,23,1616] (*Cervantes' death day*)
+Change={9,13,1752} (*Change to English system*)
+CalDay[4,23,1616] (*Shakespeare's death day*)
+Change={10,15,1582} (*Change back to Continental system*)\
+\>", "Input"]}, Open]],
+
+Cell[CellGroupData[{Cell["How many Doomsdays?", "Subsection"],
+
+Cell["\<\
+Here is a Mathematica function that selects all of the years when Doomsday \
+falls on a given date.\
+\>", "Text"],
+
+Cell["DDList[k_,y1_,y2_]:=Select[Range[y1,y2],GregYearDD[#]==k&]", "Input"],
+
+Cell["\<\
+DDList[k,y1,y2] gives you a list of all years y with $y1\\le y \\le y2$ and \
+${\\hbox Doomsday}[y] = k$. For example, here is a list of all the years \
+between 1900 and 1999 when Doomsday falls on a Wednesday.\
+\>", "Text"],
+
+Cell["DDList[3,1900,1999]", "Input"],
+
+Cell["\<\
+Here is a list of all the years between 1950 and 2050 when Doomsday falls on \
+a Monday.\
+\>", "Text"],
+
+Cell["DDList[1,1950,2050]", "Input"],
+
+Cell["\<\
+You can use the Length function to count the number of elements in a list. \
+For example, the following computation tells you how many times Doomsday \
+falls on Wednesday in the years between 1900 and 1999.\
+\>", "Text"],
+
+Cell["Length[DDList[3,1900,1999]]", "Input"],
+
+Cell["\<\
+You can combine the functions Table, Length, and DDList to get a table for \
+Doomsdays in the 20th Century.\
+\>", "Text"],
+
+Cell["Table[{k,Length[DDList[k,1900,1999]]},{k,0,6}]", "Input"],
+
+Cell["\<\
+This tells you, for example, that Doomsday is on Sunday 14 times in the 20th \
+Century, on a Monday 14 times, and so on.\
+\>", "Text"],
+
+Cell["Questions:", "Text"],
+
+Cell["\<\
+The Gregorian Calendar has a cycle of 400 years. What are the most popular \
+days for Doomsday in the Gregorian Calendar? What are the least popular days? \
+\>", "Text"],
+
+Cell["\<\
+Suppose you live to be exactly 100 years old. How many of your birthdays will \
+be on Sunday? Do a similar computation for the other days of the week. You \
+should count your date of birth as your ``zero-th'' birthday, so there will \
+be 101 dates to consider. \
+\>", "Text"],
+
+Cell["\<\
+If you saved your 1994 calendar, you will be able to use it again in 2005. \
+This is because 1994 and 2005 are both non-leap years with Doomsday on \
+Monday. Suppose you save your 1995 calendar. When is the first year that you \
+will be able to use it again? When is the first year that you will be able to \
+use your 1996 calendar again?\
+\>", "Text"],
+
+Cell["\<\
+My grandfather was a miserly sort who was always looking for a way to save a \
+few pennies. In 1896, when he was 17 years old, he noticed that there was \
+never any need to throw away a calendar--it could always be used again. He \
+resolved that in the future, he would buy a calendar if and only if he did \
+not already have a copy of it.  Eventually, he collected all the calendars he \
+would ever need. What years were in his collection?\
+\>", "Text"]}, Open]],
+
+Cell[CellGroupData[{Cell["Routines for Easter", "Subsection"],
+
+Cell["\<\
+Easter is defined to be the first Sunday strictly after the Paschal Full \
+Moon. The routines below compute the Paschal Full Moon, then use that \
+information to compute Easter.\
+\>", "Text"],
+
+Cell["\<\
+EasterG[year_]:=Mod[year,19]+1;
+GregorianEasterC[year_]:=
+ Module[{c=Floor[year/100]},
+ -c+Floor[c/4]+Floor[8(c+11)/25]];
+ JulianEasterC[year_]:=3
+EasterC[year_]:=
+ If[year>Change[[3]],
+    GregorianEasterC[year],JulianEasterC[year]]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+Paschal1[year_]:=50-Mod[11 EasterG[year] + EasterC[year],30]
+Paschal[year_]:=
+If[Paschal1[year]<49,Paschal1[year],
+ If[Paschal1[year]==50,49,
+  If[EasterG[year]>11,48,49] ] ]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+EasterNumber[year_]:=
+Paschal[year]+7-DayNumber[3,Paschal[year],year]\
+\>", "Input",
+ InitializationCell->True],
+
+Cell["\<\
+Easter[year_]:=
+If[EasterNumber[year]<32,
+{March,EasterNumber[year]},
+{April,EasterNumber[year]-31}]
+ \
+\>", "Input",
+ InitializationCell->True],
+
+Cell["Here is Easter for 1994 and 1573.", "Text"],
+
+Cell["\<\
+Easter[1994]
+Easter[1573]\
+\>", "Input"],
+
+Cell["Here is a table of dates for Easter between 1990 and 2000.", "Text"],
+
+Cell["Table[Flatten[{Easter[x],x}],{x,1990,2000}]", "Input"],
+
+Cell["\<\
+The latest Easter can be is on April 25. Here is a listing of all the years \
+between 1800 and 2000 with Easter on April 25.\
+\>", "Text"],
+
+Cell[CellGroupData[{Cell["Select[Range[1800,2000],Function[Easter[#]=={April,25}]]", "Input"],
+
+Cell[OutputFormData["\<\
+{1886, 1943}\
+\>", "\<\
+{1886, 1943}\
+\>"], "Output"]}, Open]],
+
+Cell["\<\
+The earliest Easter can be is on March 22. Here is a listing of all years \
+between 1800 and 2000 with Easter on March 22.\
+\>", "Text"],
+
+Cell["Select[Range[1800,2000],Function[Easter[#]=={March,22}]]", "Input"],
+
+Cell["Find the next year when Easter will occur on April 25.", "Text"],
+
+Cell["Find the next year when Easter will occur on March 22.", "Text"],
+
+Cell["\<\
+What is the most popular date for Easter in the 20th Century?
+What will be the most popular date in the 21st Century?\
+\>", "Text"],
+
+Cell[CellGroupData[{Cell["For an answer to the first question, open up this cell.", "SmallText"],
+
+Cell["\<\
+The following commands give a list of dates for Easter. The first number in \
+each row is the number of times Easter occurs on that day in the 20th \
+Century. To do the problem for the 21st century, simply change 1900 to 2000 \
+and 1999 to 2099.\
+\>", "SmallText",
+ TextAlignment->Center],
+
+Cell["\<\
+etable=Table[Easter[x],{x,1900,1999}];
+freq[month_,day_]:=Length[Select[etable,#=={month,day}&]]
+apriltable=Table[{freq[April,x],April,x},{x,1,25}];
+marchtable=Table[{freq[March,x],March,x},{x,23,31}];
+bigtable=Join[marchtable,apriltable];
+ColumnForm[Sort[bigtable,(#2[[1]]<#1[[1]])&]]\
+\>", "Input"],
+
+Cell[OutputFormData["\<\
+{5, April, 12}
+{4, April, 19}
+{4, April, 17}
+{4, April, 16}
+{4, April, 15}
+{4, April, 11}
+{4, April, 7}
+{4, April, 6}
+{4, April, 4}
+{4, April, 3}
+{4, April, 1}
+{4, March, 31}
+{4, March, 30}
+{3, April, 22}
+{3, April, 21}
+{3, April, 20}
+{3, April, 18}
+{3, April, 14}
+{3, April, 10}
+{3, April, 9}
+{3, April, 5}
+{3, March, 29}
+{3, March, 27}
+{3, March, 26}
+{2, April, 23}
+{2, April, 13}
+{2, April, 8}
+{2, April, 2}
+{2, March, 28}
+{1, April, 25}
+{1, March, 25}
+{1, March, 24}
+{1, March, 23}
+{0, April, 24}\
+\>", "\<\
+{5, April, 12}
+{4, April, 19}
+{4, April, 17}
+{4, April, 16}
+{4, April, 15}
+{4, April, 11}
+{4, April, 7}
+{4, April, 6}
+{4, April, 4}
+{4, April, 3}
+{4, April, 1}
+{4, March, 31}
+{4, March, 30}
+{3, April, 22}
+{3, April, 21}
+{3, April, 20}
+{3, April, 18}
+{3, April, 14}
+{3, April, 10}
+{3, April, 9}
+{3, April, 5}
+{3, March, 29}
+{3, March, 27}
+{3, March, 26}
+{2, April, 23}
+{2, April, 13}
+{2, April, 8}
+{2, April, 2}
+{2, March, 28}
+{1, April, 25}
+{1, March, 25}
+{1, March, 24}
+{1, March, 23}
+{0, April, 24}\
+\>"], "Output"],
+
+Cell["\<\
+From the above, you see that April 12 is the most popular day for Easter in \
+the 20th century, with 5 occurrences.  April 24 is the least popular day; it \
+will never occur as Easter in the 20th century.\
+\>", "SmallText",
+ TextAlignment->Center]}, Open]],
+
+Cell["  ", "Text"]}, Open]],
+
+Cell[CellGroupData[{Cell["Credits", "Subsection"],
+
+Cell["\<\
+Doomsday rule and rule for calculating Easter were taken from the book \
+``Winning Ways for your Mathematical Plays'' by E.R. Berlekamp, J.H. Conway, \
+and R.K. Guy. Mathematica routines written by Sid Graham. \
+\>", "Text"]}, Open]]
+},
+AutoGeneratedPackage->Automatic,
+WindowToolbars->{},
+CellGrouping->Manual,
+WindowSize->{740, 728},
+WindowMargins->{{350, Automatic}, {Automatic, 72}},
+ShowCellLabel->True,
+ShowCellTags->False,
+RenderingOptions->{"ObjectDithering"->True,
+"RasterDithering"->False},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[553, 21, 47, 0, 70, "Title"],
+Cell[603, 23, 260, 5, 70, "Text"],
+Cell[CellGroupData[{
+Cell[886, 30, 43, 0, 70, "Subsection"],
+Cell[932, 32, 174, 4, 70, "Text"],
+Cell[1109, 38, 128, 4, 70, "Input",
+ InitializationCell->True],
+Cell[1240, 44, 128, 6, 70, "Input",
+ InitializationCell->True],
+Cell[1371, 52, 81, 4, 70, "Input"],
+Cell[1455, 58, 57, 0, 70, "Input"],
+Cell[1515, 60, 53, 0, 70, "Input"],
+Cell[1571, 62, 98, 2, 70, "Text"],
+Cell[1672, 66, 212, 7, 70, "Input",
+ InitializationCell->True],
+Cell[1887, 75, 96, 3, 70, "Input"],
+Cell[1986, 80, 171, 3, 70, "Text"],
+Cell[2160, 85, 102, 4, 70, "Input",
+ InitializationCell->True],
+Cell[2265, 91, 86, 3, 70, "Input"],
+Cell[2354, 96, 76, 0, 70, "Text"],
+Cell[2433, 98, 125, 5, 70, "Input",
+ InitializationCell->True],
+Cell[2561, 105, 51, 0, 70, "Input"],
+Cell[2615, 107, 188, 4, 70, "Text"],
+Cell[2806, 113, 134, 5, 70, "Input",
+ InitializationCell->True],
+Cell[2943, 120, 35, 0, 70, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3010, 122, 40, 0, 70, "Subsection"],
+Cell[3053, 124, 98, 2, 70, "Text"],
+Cell[3154, 128, 89, 4, 70, "Input",
+ InitializationCell->True],
+Cell[3246, 134, 205, 7, 70, "Input",
+ InitializationCell->True],
+Cell[3454, 143, 83, 1, 70, "Input",
+ InitializationCell->True],
+Cell[3540, 146, 218, 4, 70, "Text"],
+Cell[3761, 152, 75, 1, 70, "Input",
+ InitializationCell->True],
+Cell[3839, 155, 29, 0, 70, "Input"],
+Cell[3871, 157, 155, 6, 70, "Input",
+ InitializationCell->True],
+Cell[4029, 165, 131, 5, 70, "Input",
+ InitializationCell->True],
+Cell[4163, 172, 128, 3, 70, "Text"],
+Cell[4294, 177, 34, 0, 70, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[4360, 179, 35, 0, 70, "Subsection"],
+Cell[4398, 181, 186, 4, 70, "Text"],
+Cell[4587, 187, 64, 1, 70, "Input",
+ InitializationCell->True],
+Cell[4654, 190, 261, 8, 70, "Input",
+ InitializationCell->True],
+Cell[4918, 200, 172, 6, 70, "Input",
+ InitializationCell->True],
+Cell[5093, 208, 186, 4, 70, "Input",
+ InitializationCell->True],
+Cell[5282, 214, 122, 4, 70, "Input",
+ InitializationCell->True],
+Cell[5407, 220, 102, 2, 70, "Text"],
+Cell[5512, 224, 33, 0, 70, "Input"],
+Cell[5548, 226, 114, 3, 70, "Text"],
+Cell[5665, 231, 219, 5, 70, "Input"],
+Cell[5887, 238, 18, 0, 70, "Text"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5946, 240, 34, 0, 70, "Subsection"],
+Cell[5983, 242, 99, 2, 70, "Text"],
+Cell[6085, 246, 466, 18, 70, "Input",
+ InitializationCell->True],
+Cell[6554, 266, 119, 3, 70, "Text"],
+Cell[CellGroupData[{
+Cell[6696, 271, 77, 2, 70, "Input",
+ Evaluatable->False],
+Cell[6776, 275, 98, 5, 70, "Output"]
+}, Open  ]],
+Cell[6886, 282, 80, 1, 70, "Text"],
+Cell[6969, 285, 48, 1, 70, "Subtitle"],
+Cell[7020, 288, 66, 1, 70, "Text"],
+Cell[CellGroupData[{
+Cell[7109, 291, 73, 2, 70, "Input",
+ Evaluatable->False],
+Cell[7185, 295, 90, 5, 70, "Output"]
+}, Open  ]],
+Cell[7287, 302, 65, 0, 70, "Text"],
+Cell[7355, 304, 38, 0, 70, "Input"],
+Cell[7396, 306, 215, 4, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7643, 312, 34, 0, 70, "Subsection"],
+Cell[7680, 314, 115, 3, 70, "Text"],
+Cell[7798, 319, 34, 0, 70, "Input"],
+Cell[7835, 321, 132, 3, 70, "Text"],
+Cell[7970, 326, 33, 0, 70, "Input"],
+Cell[8006, 328, 136, 3, 70, "Text"],
+Cell[8145, 333, 33, 0, 70, "Input"],
+Cell[8181, 335, 61, 0, 70, "Text"],
+Cell[8245, 337, 116, 3, 70, "Text"],
+Cell[8364, 342, 148, 6, 70, "Text"],
+Cell[8515, 350, 120, 3, 70, "Text"],
+Cell[8638, 355, 219, 4, 70, "Text"],
+Cell[8860, 361, 210, 5, 70, "Text"],
+Cell[9073, 368, 267, 5, 70, "Text"],
+Cell[9343, 375, 126, 3, 70, "Text"],
+Cell[9472, 380, 118, 3, 70, "Text"],
+Cell[9593, 385, 138, 3, 70, "Text"],
+Cell[9734, 390, 179, 4, 70, "Text"],
+Cell[9916, 396, 258, 4, 70, "Text"],
+Cell[10177, 402, 192, 4, 70, "Text"],
+Cell[10372, 408, 569, 11, 70, "Text"],
+Cell[10944, 421, 248, 4, 70, "Text"],
+Cell[11195, 427, 126, 3, 70, "Text"],
+Cell[11324, 432, 218, 4, 70, "Text"],
+Cell[11545, 438, 459, 9, 70, "Text"],
+Cell[12007, 449, 297, 6, 70, "Text"],
+Cell[12307, 457, 254, 6, 70, "Text"],
+Cell[12564, 465, 282, 10, 70, "Text"],
+Cell[12849, 477, 163, 3, 70, "Text"],
+Cell[13015, 482, 193, 4, 70, "Text"],
+Cell[13211, 488, 107, 3, 70, "Text"],
+Cell[13321, 493, 130, 3, 70, "Text"],
+Cell[13454, 498, 280, 5, 70, "Text"],
+Cell[13737, 505, 164, 3, 70, "Text"],
+Cell[13904, 510, 138, 3, 70, "Text"],
+Cell[14045, 515, 125, 3, 70, "Text"],
+Cell[14173, 520, 16, 0, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[14221, 522, 62, 0, 70, "Subsection"],
+Cell[14286, 524, 721, 11, 70, "Text"],
+Cell[15010, 537, 61, 3, 70, "Input"],
+Cell[15074, 542, 779, 13, 70, "Text"],
+Cell[15856, 557, 115, 3, 70, "Text"],
+Cell[15974, 562, 23, 0, 70, "Input"],
+Cell[16000, 564, 364, 6, 70, "Text"],
+Cell[16367, 572, 219, 5, 70, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[16618, 579, 41, 0, 70, "Subsection"],
+Cell[16662, 581, 123, 3, 70, "Text"],
+Cell[16788, 586, 75, 0, 70, "Input"],
+Cell[16866, 588, 234, 4, 70, "Text"],
+Cell[17103, 594, 36, 0, 70, "Input"],
+Cell[17142, 596, 112, 3, 70, "Text"],
+Cell[17257, 601, 36, 0, 70, "Input"],
+Cell[17296, 603, 230, 4, 70, "Text"],
+Cell[17529, 609, 44, 0, 70, "Input"],
+Cell[17576, 611, 131, 3, 70, "Text"],
+Cell[17710, 616, 63, 0, 70, "Input"],
+Cell[17776, 618, 144, 3, 70, "Text"],
+Cell[17923, 623, 26, 0, 70, "Text"],
+Cell[17952, 625, 179, 3, 70, "Text"],
+Cell[18134, 630, 285, 5, 70, "Text"],
+Cell[18422, 637, 362, 6, 70, "Text"],
+Cell[18787, 645, 464, 7, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[19283, 654, 41, 0, 70, "Subsection"],
+Cell[19327, 656, 201, 4, 70, "Text"],
+Cell[19531, 662, 285, 10, 70, "Input",
+ InitializationCell->True],
+Cell[19819, 674, 226, 7, 70, "Input",
+ InitializationCell->True],
+Cell[20048, 683, 121, 4, 70, "Input",
+ InitializationCell->True],
+Cell[20172, 689, 154, 7, 70, "Input",
+ InitializationCell->True],
+Cell[20329, 698, 49, 0, 70, "Text"],
+Cell[20381, 700, 50, 3, 70, "Input"],
+Cell[20434, 705, 74, 0, 70, "Text"],
+Cell[20511, 707, 60, 0, 70, "Input"],
+Cell[20574, 709, 148, 3, 70, "Text"],
+Cell[CellGroupData[{
+Cell[20745, 714, 73, 0, 70, "Input"],
+Cell[20821, 716, 78, 4, 70, "Output"]
+}, Open  ]],
+Cell[20911, 722, 146, 3, 70, "Text"],
+Cell[21060, 727, 73, 0, 70, "Input"],
+Cell[21136, 729, 70, 0, 70, "Text"],
+Cell[21209, 731, 70, 0, 70, "Text"],
+Cell[21282, 733, 141, 3, 70, "Text"],
+Cell[CellGroupData[{
+Cell[21446, 738, 76, 0, 70, "SmallText"],
+Cell[21525, 740, 298, 6, 70, "SmallText"],
+Cell[21826, 748, 310, 7, 70, "Input"],
+Cell[22139, 757, 1054, 70, 70, "Output"],
+Cell[23196, 829, 257, 5, 70, "SmallText"]
+}, Closed]],
+Cell[23465, 836, 18, 0, 70, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[23515, 838, 29, 0, 70, "Subsection"],
+Cell[23547, 840, 234, 4, 70, "Text"]
+}, Closed]]
+}
+]
+*)
