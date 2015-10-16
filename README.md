@@ -7,13 +7,12 @@ Most of the problems are either stated, when they are not widely known, or not, 
 Solution to all the problems are in one (or more) of the above languages.
 
 
-## Mathematica <img src="http://s24.postimg.org/e3cx78o1x/Wolfram_Mathematica9_Logo_1440x470_Trans_BG.png" height="55" />
+<h2>Mathematica <img src="http://s24.postimg.org/e3cx78o1x/Wolfram_Mathematica9_Logo_1440x470_Trans_BG.png" height="32" /></h2>
 
 Files terminated by .nb. Run them from within Mathematica, avoid Mathematica's "math" shell.
 
 
-## R
-<img src="https://developer.r-project.org/Logo/Rlogo-1.png" height="55" />
+<h2><img src="https://developer.r-project.org/Logo/Rlogo-1.png" height="32" /></h2>
 
 Files terminated by .R or .r. Run them from within RStudio or in R shell
 
@@ -22,8 +21,7 @@ Files terminated by .R or .r. Run them from within RStudio or in R shell
 ```
 
 
-## Matlab
-<img src="http://s14.postimg.org/5roiy3lpd/Matlab.jpg" height="55" />
+<h2>Matlab <img src="http://s14.postimg.org/5roiy3lpd/Matlab.jpg" height="32" /></h2>
 
 Files terminated by .m, not to be confused by Maple's command line source files. Run from within Matlab.
 
