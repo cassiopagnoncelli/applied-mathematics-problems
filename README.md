@@ -24,7 +24,7 @@ Files terminated by .R or .r. Run them from within RStudio or in R shell
 
 Files terminated by .m, not to be confused by Maple's command line source files. Run from within Matlab.
 
-![](http://s2.postimg.org/wkjcfqq0p/ruby.png)
+# ![](http://s2.postimg.org/wkjcfqq0p/ruby.png)
 
 Files terminated by .rb. Run them by typing
 
@@ -32,7 +32,7 @@ Files terminated by .rb. Run them by typing
 > ruby file.rb
 ```
 
-![](http://s12.postimg.org/p1286xth9/260px_Python_logo_and_wordmark_svg.png)
+# ![](http://s12.postimg.org/p1286xth9/260px_Python_logo_and_wordmark_svg.png)
 
 Files terminated by .py
 
@@ -42,7 +42,7 @@ Run them by typing
 > python file.py
 ```
 
-![](http://s23.postimg.org/kzlvhxaw7/wxmaxima.png)
+# ![](http://s23.postimg.org/kzlvhxaw7/wxmaxima.png)
 
 Files terminated by .wxm. There is a nice interface to the usual, command-line Maxima called WxMaxima, which can handle .wxm files.
 
