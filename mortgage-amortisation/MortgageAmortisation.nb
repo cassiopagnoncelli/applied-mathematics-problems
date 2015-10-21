@@ -1,0 +1,96 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2431,         86]
+NotebookOptionsPosition[      1979,         65]
+NotebookOutlinePosition[      2314,         80]
+CellTagsIndexPosition[      2271,         77]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Mortgage amortisation", "Title",
+ CellChangeTimes->{{3.644896211925448*^9, 3.644896224161707*^9}}],
+
+Cell["\<\
+ A:  is the periodic amortization payment
+ P:  is the principal amount borrowed
+ r:   is the percentage rate per period divided by 100; for a monthly \
+payment, take the Annual Percentage Rate (APR)/12/100
+ n:  is the number of payments; for monthly payments over 30 years, 12 months \
+x 30 years = 360 payments.\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.6448960721440573`*^9, 3.6448961122081957`*^9}, {
+  3.64489619526357*^9, 3.644896205134869*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"A", "[", 
+   RowBox[{"p_", ",", "r_", ",", "n_"}], "]"}], ":=", 
+  RowBox[{"p", " ", 
+   FractionBox[
+    RowBox[{"r", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"1", " ", "+", " ", "r"}], ")"}], "n"]}], 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"1", "+", "r"}], ")"}], "n"], "-", "1"}]]}]}]], "Input",
+ CellChangeTimes->{{3.644895214097004*^9, 3.644895246300592*^9}, {
+  3.644896096417931*^9, 3.6448961009914093`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"A", "[", 
+  RowBox[{"150000", ",", "0.001", ",", "120"}], "]"}]], "Input",
+ CellChangeTimes->{{3.644895252801153*^9, 3.6448952677750063`*^9}}],
+
+Cell[BoxData["1327.123787047636`"], "Output",
+ CellChangeTimes->{3.644895269162979*^9, 3.6448961058331327`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440, 850},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 104, 1, 90, "Title"],
+Cell[686, 25, 461, 9, 89, "Subsubtitle"],
+Cell[1150, 36, 496, 15, 53, "Input"],
+Cell[CellGroupData[{
+Cell[1671, 55, 166, 3, 32, "Input"],
+Cell[1840, 60, 111, 1, 32, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
