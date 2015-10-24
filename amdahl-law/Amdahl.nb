@@ -1,0 +1,185 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      6647,        175]
+NotebookOptionsPosition[      6259,        157]
+NotebookOutlinePosition[      6595,        172]
+CellTagsIndexPosition[      6552,        169]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "If", " ", "an", " ", "amount", " ", "paralelizable", " ", "is", " ", 
+     "sped", " ", "up", " ", "by", " ", "a", " ", "certain", " ", "amount", 
+     " ", "of", " ", "threads"}], ",", " ", 
+    RowBox[{
+    "what", " ", "is", " ", "the", " ", "total", " ", "speed", " ", "up", " ", 
+     RowBox[{"achieved", "?"}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Amdahl", "[", 
+    RowBox[{"paralelizable_", ",", "threads_"}], "]"}], ":=", 
+   FractionBox["1", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "paralelizable"}], ")"}], "+", 
+     FractionBox["paralelizable", "threads"]}]]}]}]], "Input",
+ CellChangeTimes->{{3.597410916937686*^9, 3.597410976617657*^9}, {
+  3.597411027058734*^9, 3.597411109440514*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Plot", " ", "varying", " ", "the", " ", "number", " ", "of", " ", 
+    RowBox[{"threads", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"Amdahl", "[", 
+        RowBox[{"p", ",", "t"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "20"}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"p", ",", "0.01", ",", "0.99"}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"t", ",", 
+         RowBox[{"Amdahl", "[", 
+          RowBox[{"p", ",", "t"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"p", ",", "0.01", ",", "0.99"}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "1", ",", "20"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.59741111435597*^9, 3.597411127896508*^9}, {
+  3.597411165799107*^9, 3.597411364286211*^9}, {3.59741158846667*^9, 
+  3.597411623166302*^9}, {3.597411657242065*^9, 3.597411735613402*^9}, {
+  3.59741181529657*^9, 3.597411859889363*^9}, {3.597411894890854*^9, 
+  3.597411903815357*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`p$$ = 0.01, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`p$$], 0.01, 0.99}}, Typeset`size$$ = {
+    360., {107., 112.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`p$1811$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`p$$ = 0.01}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`p$$, $CellContext`p$1811$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        $CellContext`Amdahl[$CellContext`p$$, $CellContext`t], \
+{$CellContext`t, 0, 20}], 
+      "Specifications" :> {{$CellContext`p$$, 0.01, 0.99}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {149., 155.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.597411598474166*^9, 3.597411624013812*^9}, {
+   3.59741167318159*^9, 3.597411683232379*^9}, {3.597411713543388*^9, 
+   3.597411736840028*^9}, 3.597411824259595*^9, 3.597411861293744*^9, 
+   3.597411905699556*^9}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 16.240000000000002`, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 1, 20}}, Typeset`size$$ = {360., {109., 114.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`t$1834$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$1834$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[{$CellContext`t$$, 
+         $CellContext`Amdahl[$CellContext`p, $CellContext`t$$]}, \
+{$CellContext`p, 0.01, 0.99}], 
+      "Specifications" :> {{$CellContext`t$$, 1, 20}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {151., 157.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.597411598474166*^9, 3.597411624013812*^9}, {
+   3.59741167318159*^9, 3.597411683232379*^9}, {3.597411713543388*^9, 
+   3.597411736840028*^9}, 3.597411824259595*^9, 3.597411861293744*^9, 
+   3.597411906027299*^9}]
+}, Open  ]]
+},
+WindowSize->{1280, 724},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Linux x86 (32-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 821, 20, 92, "Input"],
+Cell[CellGroupData[{
+Cell[1403, 44, 1280, 34, 69, "Input"],
+Cell[2686, 80, 1763, 36, 321, "Output"],
+Cell[4452, 118, 1791, 36, 325, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
