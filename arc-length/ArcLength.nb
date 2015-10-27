@@ -1,0 +1,142 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3729,        132]
+NotebookOptionsPosition[      3276,        111]
+NotebookOutlinePosition[      3612,        126]
+CellTagsIndexPosition[      3569,        123]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Universidade Federal do Paran\[AAcute]\n",
+ StyleBox["Departamento de Inform\[AAcute]tica\n",
+  FontSize->16],
+ StyleBox["C\[AAcute]ssio Jandir Pagnoncelli, kimble9t (em) gmail (ponto) com",
+  FontSize->14]
+}], "Subtitle",
+ CellChangeTimes->{{3.560180458425238*^9, 3.560180496480876*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Comprimento da Curva", "Title",
+ CellChangeTimes->{{3.541917142308621*^9, 3.541917158152929*^9}},
+ TextAlignment->Center],
+
+Cell[TextData[{
+ "O comprimento da curva ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"f", "(", "x", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " no intervalo ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{"0", ",", "1"}], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " \[EAcute] dado por ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     SqrtBox[
+      RowBox[{"1", "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["f", "\[Prime]",
+           MultilineFunction->None], "(", "x", ")"}], ")"}], "2"]}]], 
+     "dx"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.541917159867907*^9, 3.541917280138462*^9}, {
+  3.560180282475655*^9, 3.560180354042475*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Tome", " ", "f", 
+     RowBox[{"(", "x", ")"}]}], " ", "=", " ", 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox["x", "2"], "2"], " ", "como", " ", 
+     RowBox[{"exemplo", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "x_", "]"}], "=", 
+     FractionBox[
+      SuperscriptBox["x", "2"], "2"]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"Sqrt", "[", 
+       RowBox[{"1", "+", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"D", "[", 
+           RowBox[{
+            RowBox[{"f", "[", "x", "]"}], ",", "x"}], "]"}], ")"}], "2"]}], 
+       "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}], "//", 
+    "N"}]}]}]], "Input",
+ CellChangeTimes->{{3.541916888533973*^9, 3.541916925683658*^9}, {
+  3.541917000435503*^9, 3.5419170752643*^9}, {3.541917106519106*^9, 
+  3.541917136295661*^9}, {3.541917432930675*^9, 3.541917488270347*^9}, {
+  3.560180185475787*^9, 3.560180256520498*^9}, {3.560180368842342*^9, 
+  3.56018045207265*^9}}],
+
+Cell[BoxData["1.147793574696319`"], "Output",
+ CellChangeTimes->{{3.560180167619214*^9, 3.56018018713763*^9}, {
+  3.560180235395882*^9, 3.560180261095761*^9}, {3.560180407222446*^9, 
+  3.560180453226909*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1280, 749},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Linux x86 (32-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 306, 7, 95, "Subtitle"],
+Cell[CellGroupData[{
+Cell[888, 31, 127, 2, 88, "Title"],
+Cell[1018, 35, 812, 29, 49, "Text"],
+Cell[CellGroupData[{
+Cell[1855, 68, 1182, 34, 121, "Input"],
+Cell[3040, 104, 208, 3, 30, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
