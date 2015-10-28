@@ -1,0 +1,14 @@
+(* WZ::usage="WZ[f,n,k] yields the WZ certificate of f[n,k]. Here the 
+   input f is an expression, not a function. If R denotes the
+   rational function output by this routine, then define g[n,k] to
+   be R f[n,k], to obtain a WZ pair (f,g), i.e., a pair that 
+   satisfies f[n+1,k]-f[n,k]=g[n,k+1]-g[n,k]" *)
+WZ[f_, n_, k_] :=Module[{k1, df, t, r, g},
+        df = -f + (f /. {n -> n + 1}); 
+        t = GosperSum[df, {k, 0, k1}];
+        r = FactorialSimplify[(t /. {k1 -> k-1})/f];
+        g = FactorialSimplify[r f];
+        Print["The rational function R(n,k) is  ",r];
+        Print["The WZ mate G(n,k) is    ",g]; 
+       Return[]
+           ];

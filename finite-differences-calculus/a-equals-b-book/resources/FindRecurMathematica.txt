@@ -1,0 +1,19 @@
+findrecur[f_, ii_, jj_] :=
+  (* Finds the recurrence satified by summand f using Sister Celine method. 
+        f is a function of two integer arguments, not an expression. 
+        ii and jj are the orders of the recurrence that will be found.
+        For best results define f externally, using factorials and not binomial
+        coefficients. For example, to findrecur for Binomial[n, k]^2, first
+        define f[n_, k_]:=n!^2/(k!^2 (n - k)!^2) and then call findrecur[f, 2, 2]  *)
+  Block[{a}, 
+    Module[{yy, zz, ll, tt, uu, r, s, i, j}, 
+      yy = Sum[Sum[
+            a[i, j]*FullSimplify[f[n - j, k - i]/f[n, k]], {i, 0, ii}], {j, 0,
+             jj}];
+      zz = Collect[Numerator[Together[yy]], k];
+      ll = CoefficientList[zz, k];
+      tt = Flatten[Table[a[i, j], {i, 0, ii}, {j, 0, jj}]];
+      uu = Flatten[Simplify[Solve[ll == 0, tt]]];
+      For[r = 0, r <= ii, r++, 
+        For[s = 0, s <= jj, s++, a[r, s] = Replace[a[r, s], uu]]];
+      Sum[Sum[a[i, j] F[n - j, k - i], {i, 0, ii}], {j, 0, jj}] == 0]]
