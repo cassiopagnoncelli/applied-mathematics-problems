@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 car = wins = 0
 many = 100000
  
