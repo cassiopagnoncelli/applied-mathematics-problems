@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     26615,        596]
-NotebookOptionsPosition[     25392,        549]
-NotebookOutlinePosition[     25727,        564]
-CellTagsIndexPosition[     25684,        561]
+NotebookDataLength[     27734,        630]
+NotebookOptionsPosition[     26308,        577]
+NotebookOutlinePosition[     26643,        592]
+CellTagsIndexPosition[     26600,        589]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -48,10 +48,10 @@ Cell[BoxData[
    3.656202076894026*^9, 3.6562020897215014`*^9}, 3.656202383294384*^9, {
    3.6562036122822733`*^9, 3.656203619340324*^9}, 3.656204071927408*^9}],
 
-Cell["where 0 <= F[t] <= 1.", "Subsubtitle",
+Cell["where 0 \[LessEqual] F[t] \[LessEqual] 1.", "Subsubtitle",
  CellChangeTimes->{{3.656202044019609*^9, 3.656202044403357*^9}, {
   3.656202118735587*^9, 3.65620212150261*^9}, {3.656202176158703*^9, 
-  3.656202181146381*^9}}],
+  3.656202181146381*^9}, {3.656205262641623*^9, 3.656205282915292*^9}}],
 
 Cell[CellGroupData[{
 
@@ -61,10 +61,12 @@ Cell["Interpretation", "Subtitle",
 Cell["\<\
 F\[CloseCurlyQuote][t] is the rate of adoption in a certain population \
 yielding F[t] as an S-shaped curve. Here, constants p represent the rate of \
-spontaneous innovation/adoption and q the rate of imitation of adoption.\
+spontaneous innovation/adoption and q the rate of imitation of adoption. The \
+portion 1-F[t] decreases faster when F\[CloseCurlyQuote][t] is large.\
 \>", "Subsubtitle",
  CellChangeTimes->{{3.656202164947941*^9, 3.656202168929105*^9}, {
-  3.6562022050393867`*^9, 3.656202285611125*^9}}]
+  3.6562022050393867`*^9, 3.656202285611125*^9}, {3.656205293459608*^9, 
+  3.6562053775956583`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -147,7 +149,7 @@ Cell[BoxData[
        Rational[1, 3]}, 0, 1}, {{
        Hold[$CellContext`q$$], 
        Rational[2, 3]}, 
-      Dynamic[$CellContext`p$$], 1}}, Typeset`size$$ = {360., {114., 119.}}, 
+      Dynamic[$CellContext`p$$], 1}}, Typeset`size$$ = {360., {106., 112.}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
     True, $CellContext`p$3377$$ = 0, $CellContext`q$3378$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
@@ -168,7 +170,7 @@ Cell[BoxData[
           Rational[2, 3]}, 
          Dynamic[$CellContext`p$$], 1}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{407., {171., 178.}},
+     ImageSizeCache->{407., {163., 170.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -544,6 +546,32 @@ h1JS3J0aRZ+5hVzMV2eTZEReK9RK/ORmhPeui8NNClhsBVaeRl2BTj/+1RWo
 zziUN/4b0ElbvA==\
 \>"]]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Comments", "Subtitle",
+ CellChangeTimes->{{3.65620539120155*^9, 3.6562053955302353`*^9}}],
+
+Cell["\<\
+In a network, diffusion forms a graph containing a giant component, whose \
+size varies between\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.656205396967966*^9, 3.656205468546419*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "n"], "<", "p", "<", 
+  FractionBox[
+   RowBox[{"Log", "[", "n", "]"}], "n"]}]], "Input",
+ CellChangeTimes->{{3.6562054695067987`*^9, 3.656205483900096*^9}}],
+
+Cell["\<\
+where
+p << 1/n: all nodes isoleted (little diffusion)
+log(n)/n << p: all paths are connected.\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.656205498554048*^9, 3.656205577172308*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
@@ -568,34 +596,40 @@ Cell[579, 22, 93, 1, 90, "Title"],
 Cell[675, 25, 97, 1, 49, "Subtitle"],
 Cell[775, 28, 167, 2, 28, "Subsubtitle"],
 Cell[945, 32, 626, 16, 32, "Input"],
-Cell[1574, 50, 207, 3, 28, "Subsubtitle"],
+Cell[1574, 50, 273, 3, 28, "Subsubtitle"],
 Cell[CellGroupData[{
-Cell[1806, 57, 99, 1, 49, "Subtitle"],
-Cell[1908, 60, 371, 6, 47, "Subsubtitle"]
+Cell[1872, 57, 99, 1, 49, "Subtitle"],
+Cell[1974, 60, 498, 8, 47, "Subsubtitle"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2316, 71, 96, 1, 49, "Subtitle"],
-Cell[2415, 74, 135, 1, 28, "Subsubtitle"],
-Cell[2553, 77, 772, 24, 52, "Input"]
+Cell[2509, 73, 96, 1, 49, "Subtitle"],
+Cell[2608, 76, 135, 1, 28, "Subsubtitle"],
+Cell[2746, 79, 772, 24, 52, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3362, 106, 97, 1, 50, "Subtitle"],
+Cell[3555, 108, 97, 1, 49, "Subtitle"],
 Cell[CellGroupData[{
-Cell[3484, 111, 861, 24, 49, "Input"],
-Cell[4348, 137, 2151, 45, 398, "Output"]
+Cell[3677, 113, 861, 24, 49, "Input"],
+Cell[4541, 139, 2151, 45, 350, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6548, 188, 145, 2, 50, "Subtitle"],
+Cell[6741, 190, 145, 2, 49, "Subtitle"],
 Cell[CellGroupData[{
-Cell[6718, 194, 1184, 38, 55, "Input"],
-Cell[7905, 234, 533, 11, 23, "Message"]
+Cell[6911, 196, 1184, 38, 55, "Input"],
+Cell[8098, 236, 533, 11, 23, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8475, 250, 391, 11, 32, "Input"],
-Cell[8869, 263, 16483, 281, 248, 6971, 123, "CachedBoxData", "BoxData", \
+Cell[8668, 252, 391, 11, 32, "Input"],
+Cell[9062, 265, 16483, 281, 248, 6971, 123, "CachedBoxData", "BoxData", \
 "Output"]
 }, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25594, 552, 95, 1, 49, "Subtitle"],
+Cell[25692, 555, 192, 4, 28, "Subsubtitle"],
+Cell[25887, 561, 200, 5, 49, "Input"],
+Cell[26090, 568, 190, 5, 66, "Subsubtitle"]
 }, Open  ]]
 }, Open  ]]
 }
