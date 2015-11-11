@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     27734,        630]
-NotebookOptionsPosition[     26308,        577]
-NotebookOutlinePosition[     26643,        592]
-CellTagsIndexPosition[     26600,        589]
+NotebookDataLength[     36900,        853]
+NotebookOptionsPosition[     35090,        786]
+NotebookOutlinePosition[     35425,        801]
+CellTagsIndexPosition[     35382,        798]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -566,12 +566,221 @@ Cell[BoxData[
    RowBox[{"Log", "[", "n", "]"}], "n"]}]], "Input",
  CellChangeTimes->{{3.6562054695067987`*^9, 3.656205483900096*^9}}],
 
+Cell[CellGroupData[{
+
 Cell["\<\
 where
 p << 1/n: all nodes isoleted (little diffusion)
 log(n)/n << p: all paths are connected.\
 \>", "Subsubtitle",
- CellChangeTimes->{{3.656205498554048*^9, 3.656205577172308*^9}}]
+ CellChangeTimes->{{3.656205498554048*^9, 3.656205577172308*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6562068919867163`*^9, 3.656206892537382*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Giant component size depends especially on the expected degree of each node, \
+this is dictated by the equation\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.65620687910207*^9, 3.656206957003757*^9}, {
+  3.656207049756667*^9, 3.656207064964843*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"Log", "[", 
+     RowBox[{"1", "-", "q"}], "]"}], "q"]}], "\[Equal]", 
+  RowBox[{"E", "[", "d", "]"}]}]], "Input",
+ CellChangeTimes->{{3.656207066166397*^9, 3.6562070767114277`*^9}, {
+  3.6562071135368147`*^9, 3.656207121936816*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+so simulating it we have giant component size as a function of the expected \
+degree,\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.6562071265153*^9, 3.656207139399096*^9}, {
+  3.656209118206771*^9, 3.656209165416366*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"GiantCS", "[", "d_", "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"FindRoot", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Log", "[", 
+          RowBox[{"1", "-", "q"}], "]"}], "/", "q"}], "+", "d"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"q", ",", 
+         SuperscriptBox["10", 
+          RowBox[{"-", "5"}]], ",", 
+         RowBox[{"1", "-", 
+          SuperscriptBox["10", 
+           RowBox[{"-", "5"}]]}]}], "}"}]}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}], " ", "/.", 
+    RowBox[{"Rule", "\[Rule]", 
+     RowBox[{"(", 
+      RowBox[{"#2", "&"}], ")"}]}]}], ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"GiantCS", "[", "d", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"d", ",", "1", ",", "3"}], "}"}], ",", 
+   RowBox[{"Filling", "\[Rule]", "Bottom"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<Expressions\>\""}], ",", 
+   RowBox[{"AxesOrigin", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6562071558147907`*^9, 3.656207156139894*^9}, {
+   3.656207241007516*^9, 3.6562072877546587`*^9}, {3.656207438691641*^9, 
+   3.656207439914715*^9}, 3.656207516756073*^9, {3.656207626833313*^9, 
+   3.656207675291553*^9}, {3.656208697603889*^9, 3.656208763486064*^9}, {
+   3.6562089367074747`*^9, 3.656208959585719*^9}, {3.656209042278687*^9, 
+   3.656209048535387*^9}, {3.656209099205666*^9, 3.656209107621385*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{GraphicsBox[
+    GraphicsComplexBox[CompressedData["
+1:eJw1lAlQk2cQhv+cHyLaiAkaEFEsoKiVcngQyX5SQNEqEKVaWhARqXiQAiKM
+VIwCojhcihSh7YBYlEOdNNHSoojxACmn0gIWFRVIyPETCgRCOJrO1J3Z2dmZ
+nWdn33dml4YJBQeoBEH4GfO/GtkzYkoQWtgRwXDJr43je+V7+DYWaWGLrzKA
+uVACeZwJUxu/IXD/ue2ta7cMhmzq43qHhkBM6M3PSBvArsH6ZELOP3D6GVhS
+ulqhZYMcXeIPgz2b66Df2g7Ja2W8JT3DsHm6/WLI+g64Nc4adskagYyjErqf
+9UsQB8l9LHijYFuRk1Mq7YYa35bPDv89Ck9sKyg71a9h07TjY5/zOlBVprya
+zO6BZsjX5K4cg1u/E0ma5LfgujRDIm4YA560WMAPfQes+tHJXfHjoNY6FDt7
+vAedQTh4aKEevHl+R0cN70EwGnwA1emhST5+RVTdC2mZL+JjYiZAe8iqKC2y
+D55Kg1z8zQ3ADihyiyL6IbEoMEb6wADHhkvm1uT3gzs3LOjCvklgfLnKfJm1
+HIS73z1RsKagtSfWoeuqHE66KZvY96egzorSPd9aAZeLaKckwdMgCvxKdzNN
+AcvasiWds2dg8emnZ5qGFVCduSbn21szYCnKHPEVDABHV56qsidwodN3ff5l
+A3AOJdDDThL4yv0j9UqKEkRvmjrmNRP44Q7tiXQ/JbgWvFKn2FGwWhKozfpJ
+Ce0ff+q/N5GCk4p9RXvkStDHzTGJ/YOCBUlV3pscVNBVVkLZakvFjkLG3bMH
+VcC/JvMLiqXi+s+thOpiFWRF2anbZFTskCet43aooNDKs8GMS8NpUa6vcuao
+YVWWfFIUScPVoas9MzzUkNDnE11VS8M0jV5TGaUGX+oa9xXmdFxp6/GGKFAD
+GgwKoITRMd7fnwsyNYhqcPkPVXQc8+Cb9EyVGpJ23d4dPYuB6dGC+bNZGljX
+1OEzax8DO2TxvBPcNNDN8Uox+ZWBj5nSvd32aIBpt8FiE2LiRcG2NuRxDags
+FAMbQ5g4nb6an5KngcAWG/OY20x8s7r7wYlfNFC5u/Dc3BkmHvblRF1o1ECN
+rBVHBSLcmXv+RITcOD+SuR2VIjwZsH3AeUYDjVmpEzMzCD+1PD4vciEJX2zk
+Okb4a6GW3y/qvVwCLE/Ta7QXCEu3BxycmE1C6Nw0S5flWsime7ENf10C58LG
+hNR7CLulk4PFDBJIxeaW0wMI32BfrdhoTkL42P2LXLYWbPj7EXc8GR7Xrd7v
+I0a49YaJ11EqCac4Zb95vkZ47UrutsUfkRB8r7+3dgThQZPnuYEcEvoPdzWb
+mWqBxe84125yDMxCQjpLKxCOiOc1tRIk1Fd0fVLSifBwXKVpxhwSSgULgpYO
+IpxaF9/8bD4JbPu7wtAJhMOls4geCxKW28uPMBlacEzUv9s2LxycynTmHTcQ
+vr5zxoRq5Kl10ZEv/kS4Qvy875EZCQ0/3s4NUCMcpxcfpBl566N3lGePIbxE
+cm/U0sjTvrR2c5oy7lO+l1xbQMIWGslLpmrBfWqsupyzC2TNnk7C6wizlN+n
+FBj1TlpUc/ZwO8Lr7qxw3mvkf/3IIB5QIqyY5nCKjHo15BXULdchPP7Q2r/K
+eP8Z4pCg3oDwUKIs3NPID7nTtiB/GmHqnlgN0+jXh39G/B8f/PzQ/wty/U+u
+
+     "], {{{}, {
+        Hue[0.67, 0.6, 0.6], 
+        Opacity[0.2], 
+        EdgeForm[None], 
+        GraphicsGroupBox[
+         PolygonBox[{{1, 78, 79, 50, 77, 70, 76, 64, 69, 75, 59, 63, 68, 74, 
+          55, 58, 62, 67, 73, 52, 54, 57, 61, 66, 72, 49, 48, 47, 46, 45, 44, 
+          43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 
+          26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 
+          9, 8, 7, 6, 5, 4, 3, 2, 51, 53, 56, 60, 65, 
+          71}}]]}, {}, {}}, {{}, {}, {
+        Hue[0.67, 0.6, 0.6], 
+        LineBox[{1, 71, 65, 60, 56, 53, 51, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 
+         12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 
+         29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 
+         46, 47, 48, 49, 72, 66, 61, 57, 54, 52, 73, 67, 62, 58, 55, 74, 68, 
+         63, 59, 75, 69, 64, 76, 70, 77, 50}]}}}], AspectRatio -> 
+    NCache[GoldenRatio^(-1), 0.6180339887498948], Axes -> True, 
+    AxesLabel -> {None, None}, AxesOrigin -> {0, 0}, 
+    Method -> {"AxesInFront" -> True}, 
+    PlotRange -> {{0, 3}, {0., 0.9404797879259028}}, PlotRangeClipping -> 
+    True, PlotRangePadding -> {
+      Scaled[0.02], 
+      Scaled[0.02]}],TemplateBox[{
+     TagBox[
+      FormBox[
+       TagBox[
+        RowBox[{"GiantCS", "(", "d", ")"}], HoldForm], TraditionalForm], 
+      TraditionalForm, Editable -> True]}, "LineLegend", 
+    DisplayFunction -> (StyleBox[
+      StyleBox[
+       PaneBox[
+        TagBox[
+         GridBox[{{
+            TagBox[
+             GridBox[{{
+                GraphicsBox[{{
+                   Directive[
+                    EdgeForm[{
+                    Opacity[0.3], 
+                    GrayLevel[0]}], 
+                    Hue[0.67, 0.6, 0.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                   Directive[
+                    EdgeForm[{
+                    Opacity[0.3], 
+                    GrayLevel[0]}], 
+                    Hue[0.67, 0.6, 0.6]], {}}}, AspectRatio -> Full, 
+                 ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                 ImagePadding -> 1, 
+                 BaselinePosition -> (Scaled[0.1] -> Baseline)], #}}, 
+              GridBoxAlignment -> {
+               "Columns" -> {Center, Left}, "Rows" -> {{Baseline}}}, 
+              AutoDelete -> False, 
+              GridBoxDividers -> {
+               "Columns" -> {{False}}, "Rows" -> {{False}}}, 
+              GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}}, 
+              GridBoxSpacings -> {"Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], 
+             "Grid"]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0}}}], "Grid"], 
+        Alignment -> Left, AppearanceElements -> None, 
+        ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> "ResizeToFit"], 
+       LineIndent -> 0, StripOnInput -> False], {FontFamily -> "Times"}, 
+      Background -> Automatic, StripOnInput -> False]& ), Editable -> True, 
+    InterpretationFunction :> (RowBox[{"LineLegend", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"Directive", "[", 
+             RowBox[{"Hue", "[", 
+               RowBox[{"0.67`", ",", "0.6`", ",", "0.6`"}], "]"}], "]"}], 
+           "}"}], ",", 
+         RowBox[{"{", #, "}"}], ",", 
+         RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& )]},
+  "Legended",
+  DisplayFunction->(GridBox[{{
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"], 
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, GridBoxItemSize -> Automatic, 
+    BaselinePosition -> {1, 1}]& ),
+  Editable->True,
+  InterpretationFunction->(RowBox[{"Legended", "[", 
+     RowBox[{#, ",", 
+       RowBox[{"Placed", "[", 
+         RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
+ CellChangeTimes->{{3.656208710778245*^9, 3.656208748894043*^9}, 
+   3.656208969292116*^9, 3.6562090497356377`*^9, {3.656209103362097*^9, 
+   3.656209108516049*^9}}]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
@@ -629,7 +838,21 @@ Cell[CellGroupData[{
 Cell[25594, 552, 95, 1, 49, "Subtitle"],
 Cell[25692, 555, 192, 4, 28, "Subsubtitle"],
 Cell[25887, 561, 200, 5, 49, "Input"],
-Cell[26090, 568, 190, 5, 66, "Subsubtitle"]
+Cell[CellGroupData[{
+Cell[26112, 570, 190, 5, 66, "Subsubtitle"],
+Cell[26305, 577, 94, 1, 32, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26436, 583, 256, 5, 28, "Subsubtitle"],
+Cell[26695, 590, 301, 8, 51, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27033, 603, 229, 5, 28, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[27287, 612, 1514, 38, 59, "Input"],
+Cell[28804, 652, 6234, 128, 247, "Output"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
