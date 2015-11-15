@@ -1,0 +1,103 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2617,         94]
+NotebookOptionsPosition[      2166,         74]
+NotebookOutlinePosition[      2502,         89]
+CellTagsIndexPosition[      2459,         86]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Universidade Federal do Paran\[AAcute]\n",
+ StyleBox["Departamento de Inform\[AAcute]tica\n",
+  FontSize->18],
+ StyleBox["C\[AAcute]ssio Jandir Pagnoncelli, kimble9t (em) gmail (ponto) com",
+  FontSize->14]
+}], "Subtitle",
+ CellChangeTimes->{{3.560179832258322*^9, 3.5601798657084618`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Rotation Matrix", "Title",
+ CellChangeTimes->{{3.558648995178641*^9, 3.558649025417485*^9}},
+ TextAlignment->Center],
+
+Cell["\<\
+The coordinates (x\[CloseCurlyQuote], y\[CloseCurlyQuote]) after the rotation \
+by a degree of theta is given by\
+\>", "Text",
+ CellChangeTimes->{{3.558649026218587*^9, 3.558649071290979*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", GridBox[{
+     {
+      RowBox[{"Cos", "[", "theta", "]"}], 
+      RowBox[{"-", 
+       RowBox[{"Sin", "[", "theta", "]"}]}]},
+     {
+      RowBox[{"Sin", "[", "theta", "]"}], 
+      RowBox[{"Cos", "[", "theta", "]"}]}
+    }], ")"}], " ", 
+  RowBox[{"(", GridBox[{
+     {"x"},
+     {"y"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.558649073032784*^9, 3.558649114673651*^9}}],
+
+Cell["\<\
+where (x, y) are the coordinates of the original point.\
+\>", "Text",
+ CellChangeTimes->{{3.558649116421014*^9, 3.55864913432505*^9}}],
+
+Cell["\<\
+See more at
+http://en.wikipedia.org/wiki/Rotation_matrix
+and, as a complement, see Kabsch algorithm
+http://en.wikipedia.org/wiki/Kabsch_algorithm
+which calculates the optimal rotation matrix that minimizes the root mean \
+square deviation between two paired set of points.\
+\>", "Text",
+ CellChangeTimes->{{3.558649199831973*^9, 3.558649290458003*^9}}]
+}, Open  ]]
+},
+WindowSize->{1280, 749},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Linux x86 (32-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 308, 7, 97, "Subtitle"],
+Cell[CellGroupData[{
+Cell[890, 31, 122, 2, 88, "Title"],
+Cell[1015, 35, 202, 4, 30, "Text"],
+Cell[1220, 41, 418, 15, 46, "Input"],
+Cell[1641, 58, 144, 3, 30, "Text"],
+Cell[1788, 63, 362, 8, 106, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
