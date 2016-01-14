@@ -1,0 +1,362 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     11007,        353]
+NotebookOptionsPosition[     10164,        318]
+NotebookOutlinePosition[     10502,        333]
+CellTagsIndexPosition[     10459,        330]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Colis\[OTilde]es com MD5", "Title",
+ CellChangeTimes->{{3.585006785241118*^9, 3.585006804315914*^9}}],
+
+Cell[TextData[{
+ "Qual a probabilidade de que n\[ATilde]o haja colis\[OTilde]es numa amostra \
+de ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " hashes MD5?\n\nExistem ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["16", "32"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " poss\[IAcute]veis hashes. Ent\[ATilde]o, a probabilidade de duas \
+particulares hashes ",
+ StyleBox["n\[ATilde]o",
+  FontSlant->"Italic"],
+ " se colidirem \[EAcute] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "-", 
+    SuperscriptBox["2", 
+     RowBox[{"-", "128"}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ".\n\nPor independ\[EHat]ncia, sabemos que a resposta para o problema \
+\[EAcute]"
+}], "Subsubtitle",
+ CellChangeTimes->{{3.585006805962631*^9, 3.585006945360216*^9}, {
+  3.58500699986998*^9, 3.585007007017632*^9}, {3.585007208623005*^9, 
+  3.585007234102608*^9}, {3.585007319255179*^9, 3.585007330186186*^9}, {
+  3.585007558570996*^9, 3.585007628721877*^9}, {3.585009229011775*^9, 
+  3.585009229327966*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Pr", "[", 
+   RowBox[{"Conj", "[", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["x", "i"], "\[NotEqual]", 
+      SubscriptBox["x", "j"]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", "\[NotEqual]", "j"}], "}"}]}], "]"}], "]"}], "\[Equal]", 
+  RowBox[{"Product", "[", 
+   RowBox[{
+    RowBox[{"Product", "[", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        SubscriptBox["x", "i"], "\[NotEqual]", 
+        SubscriptBox["x", "j"]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"j", ",", 
+        RowBox[{"i", "+", "1"}], ",", "n"}], "}"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.585007650241447*^9, 3.585007704171709*^9}, {
+  3.585007777050563*^9, 3.585007779300623*^9}, {3.585007822380443*^9, 
+  3.585007849548395*^9}, {3.585007937748258*^9, 3.585007944238035*^9}, {
+  3.585008471314672*^9, 3.585008525867579*^9}, {3.585009192503237*^9, 
+  3.585009200100833*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Pr", "[", 
+   RowBox[{"Conj", "[", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["x", "i"], "\[NotEqual]", 
+      SubscriptBox["x", "j"]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", "\[NotEqual]", "j"}], "}"}]}], "]"}], "]"}], "\[Equal]", 
+  RowBox[{
+   UnderoverscriptBox["\[Product]", 
+    RowBox[{"i", "=", "1"}], "n"], 
+   RowBox[{"(", 
+    RowBox[{
+     UnderoverscriptBox["\[Product]", 
+      RowBox[{"j", "=", 
+       RowBox[{"1", "+", "i"}]}], "n"], 
+     RowBox[{"Pr", "[", 
+      RowBox[{
+       SubscriptBox["x", "i"], "\[NotEqual]", 
+       SubscriptBox["x", "j"]}], "]"}]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{{3.585008512235535*^9, 3.585008527698739*^9}, 
+   3.585009201484367*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "que corresponde a nenhuma colis\[ATilde]o, visto num grafo ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["K", "n"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ","
+}], "Subsubtitle",
+ CellChangeTimes->{{3.585008533760424*^9, 3.5850085938217*^9}, {
+  3.585008707227631*^9, 3.585008716225672*^9}, {3.585008763015163*^9, 
+  3.585008786455262*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Prob", "[", "n_", "]"}], ":=", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"1", "-", 
+     SuperscriptBox["2", 
+      RowBox[{"-", "128"}]]}], ")"}], 
+   FractionBox[
+    RowBox[{"n", 
+     RowBox[{"(", 
+      RowBox[{"n", "-", "1"}], ")"}]}], "2"]]}]], "Input",
+ CellChangeTimes->{{3.58500316912843*^9, 3.585003177685723*^9}, {
+  3.585006438059934*^9, 3.585006468838452*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Por exemplo, para ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "=", 
+    SuperscriptBox["2", "10"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", o resultado ",
+ "\[EAcute]"
+}], "Subsubtitle",
+ CellChangeTimes->{{3.585008721347037*^9, 3.585008726481749*^9}, {
+  3.585008792228716*^9, 3.585008818479586*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Prob", "[", 
+  SuperscriptBox["2", "10"], "]"}]], "Input",
+ CellChangeTimes->{{3.585006474642094*^9, 3.585006495849639*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   PanelBox[GridBox[{
+      {
+       StyleBox[
+        StyleBox[
+         DynamicBox[ToBoxes[
+           FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+           StandardForm],
+          ImageSizeCache->{407., {3., 10.}}],
+         StripOnInput->False,
+         DynamicUpdating->True], "Panel",
+        StripOnInput->False,
+        Background->None]},
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+           "545932399338396496133140866828805576952859425128215036015083693845\
+", 
+            RowBox[{"\[LeftSkeleton]", "20181921", "\[RightSkeleton]"}], 
+            "50958086381100055742342323089610900410661997739225625991821289062\
+5"}], ")"}], "/", 
+          RowBox[{"(", 
+           RowBox[{
+           "545932399338396496133140866828806417273476044986752378335015028789\
+", 
+            RowBox[{"\[LeftSkeleton]", "20181921", "\[RightSkeleton]"}], 
+            "64200620156185457025591753205673263746416115361311214000747944345\
+6"}], ")"}]}],
+         Short[#, 5]& ],
+        Background->GrayLevel[1],
+        BaseStyle->{Deployed -> False},
+        Frame->True,
+        FrameStyle->GrayLevel[0, 0.2],
+        StripOnInput->False]},
+      {
+       RowBox[{
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+             StandardForm],
+            ImageSizeCache->{72., {1., 10.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 18, 23494598213200388379, 5/2],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+             StandardForm],
+            ImageSizeCache->{75., {1., 10.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 18, 23494598213200388379, 5 2],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+             StandardForm],
+            ImageSizeCache->{116., {3., 10.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 18, 23494598213200388379, Infinity],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+             StandardForm],
+            ImageSizeCache->{108., {1., 10.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>FrontEndExecute[{
+            FrontEnd`SetOptions[
+            FrontEnd`$FrontEnd, 
+             FrontEnd`PreferencesSettings -> {"Page" -> "Evaluation"}], 
+            FrontEnd`FrontEndToken["PreferencesDialog"]}],
+         Evaluator->None,
+         Method->"Preemptive"]}]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[1.2]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    DefaultBaseStyle->{},
+    FrameMargins->5],
+   Deploy,
+   DefaultBaseStyle->{Deployed -> True}],
+  Out[18]]], "Output",
+ CellChangeTimes->{3.585006675659313*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"%", ",", "300"}], "]"}]], "Input",
+ CellChangeTimes->{{3.585006695189065*^9, 3.585006708054645*^9}}],
+
+Cell[BoxData["0.\
+999999999999999999999999999999998460760677259263845565417628699703804263711200\
+109859549040414781502266982855570725934260920171798847695731568612452897658624\
+267399480560137104629717610084613287521637894401660092332401381064679414257535\
+793611614794908825066353859048583799798359830201215086981987208196988586112663\
+692103`300."], "Output",
+ CellChangeTimes->{3.585006710041843*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 607},
+WindowMargins->{{149, Automatic}, {Automatic, 25}},
+FrontEndVersion->"8.0 for Linux x86 (32-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 107, 1, 88, "Title"],
+Cell[689, 25, 1015, 28, 141, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1729, 57, 1003, 27, 55, "Input"],
+Cell[2735, 86, 739, 23, 63, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3511, 114, 371, 10, 31, "Subsubtitle"],
+Cell[3885, 126, 415, 13, 46, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4337, 144, 338, 11, 31, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[4700, 159, 148, 3, 36, "Input"],
+Cell[4851, 164, 4684, 133, 249, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9572, 302, 145, 3, 30, "Input"],
+Cell[9720, 307, 404, 6, 107, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
