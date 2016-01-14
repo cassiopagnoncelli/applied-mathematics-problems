@@ -1,0 +1,1744 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     72965,       1735]
+NotebookOptionsPosition[     68830,       1617]
+NotebookOutlinePosition[     69166,       1632]
+CellTagsIndexPosition[     69123,       1629]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Universidade Federal do Paran\[AAcute]\n",
+ StyleBox["Departamento de Inform\[AAcute]tica\n",
+  FontSize->18],
+ StyleBox["C\[AAcute]ssio Jandir Pagnoncelli, kimble9t (em) gmail (ponto) com",
+  FontSize->14]
+}], "Subtitle",
+ CellChangeTimes->{{3.560180769500717*^9, 3.560180794362658*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Fra\[CCedilla]\[ATilde]o continuada dos n\[UAcute]meros primos\
+\>", "Title",
+ CellChangeTimes->{{3.560180736286131*^9, 3.560180746690284*^9}},
+ TextAlignment->Center],
+
+Cell[TextData[StyleBox["Fra\[CCedilla]\[ATilde]o continuada de primos",
+ FontSize->16,
+ FontColor->GrayLevel[0.5]]], "Text",
+ CellChangeTimes->{{3.534617768173237*^9, 3.534617785148753*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "0"}], ",", 
+   RowBox[{"i", "<", "20"}], ",", 
+   RowBox[{
+    RowBox[{"i", "++"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<n=\>\"", ",", "i", ",", "\"\<; pi(n)=\>\"", ",", 
+      RowBox[{"PrimePi", "[", "i", "]"}], ",", " ", "\"\<; p_n=\>\"", ",", 
+      RowBox[{"Prime", "[", "i", "]"}], ",", "\"\<; pi(p_n)=\>\"", ",", 
+      RowBox[{"PrimePi", "[", 
+       RowBox[{"Prime", "[", "i", "]"}], "]"}], ",", "\"\<; \>\"", ",", 
+      RowBox[{"Sqrt", "[", 
+       RowBox[{"Prime", "[", "i", "]"}], "]"}], ",", "\"\<=\>\"", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ContinuedFraction", "[", 
+       RowBox[{
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"Prime", "[", "i", "]"}], "]"}], ",", "15"}], "]"}], ",", 
+      " ", "\"\<;\>\""}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.534553504357482*^9, 3.534553541497245*^9}, {
+   3.534553694552454*^9, 3.53455375571739*^9}, {3.534553806905849*^9, 
+   3.534553808032382*^9}, {3.534553857153271*^9, 3.534553906051964*^9}, {
+   3.534554163208468*^9, 3.534554229187176*^9}, {3.53455440148186*^9, 
+   3.534554402245791*^9}, {3.534554622163879*^9, 3.534554674951125*^9}, {
+   3.534554735272318*^9, 3.534554747511718*^9}, {3.534554792009502*^9, 
+   3.534554908217392*^9}, {3.534555045342564*^9, 3.534555066627109*^9}, {
+   3.534555106991645*^9, 3.534555112854406*^9}, {3.534555144799265*^9, 
+   3.534555190609515*^9}, 3.534555316182862*^9, {3.534555976448118*^9, 
+   3.534555976793846*^9}, 3.534556125716967*^9, {3.534605363234929*^9, 
+   3.534605381839302*^9}, 3.534605423112369*^9, {3.53460558302538*^9, 
+   3.534605648864963*^9}, {3.534605745118173*^9, 3.534605812908176*^9}, {
+   3.534606016213116*^9, 3.534606053881547*^9}, {3.534606798074528*^9, 
+   3.534606817453697*^9}, {3.534607265744143*^9, 3.53460732459461*^9}, 
+   3.534607380357658*^9, {3.534607442796267*^9, 3.53460744855708*^9}, {
+   3.534610816671855*^9, 3.53461081996951*^9}, {3.534610870315674*^9, 
+   3.534610897632449*^9}, {3.534617397798371*^9, 3.534617406286644*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "0", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["2"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2",
+      ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2"}], 
+    "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 1, "; pi(n)=", 0, "; p_n=", 2, "; pi(p_n)=", 1, "; ", 2^
+   Rational[1, 2], "=", {1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753368746*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["3"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "2", ",", "1",
+      ",", "2", ",", "1", ",", "2", ",", "1", ",", "2", ",", "1", ",", "2"}], 
+    "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 2, "; pi(n)=", 1, "; p_n=", 3, "; pi(p_n)=", 2, "; ", 3^
+   Rational[1, 2], "=", {1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753379234*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["5"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "4", ",", "4", ",", "4", ",", "4", ",", "4", ",", "4", ",", "4",
+      ",", "4", ",", "4", ",", "4", ",", "4", ",", "4", ",", "4", ",", "4"}], 
+    "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 3, "; pi(n)=", 2, "; p_n=", 5, "; pi(p_n)=", 3, "; ", 5^
+   Rational[1, 2], "=", {2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.56018075338784*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["7"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "1", ",", "1", ",", "1", ",", "4", ",", "1", ",", "1", ",", "1",
+      ",", "4", ",", "1", ",", "1", ",", "1", ",", "4", ",", "1", ",", "1"}], 
+    "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 4, "; pi(n)=", 2, "; p_n=", 7, "; pi(p_n)=", 4, "; ", 7^
+   Rational[1, 2], "=", {2, 1, 1, 1, 4, 1, 1, 1, 4, 1, 1, 1, 4, 1, 1}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753390903*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["11"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "3", ",", "3", ",", "6", ",", "3", ",", "6", ",", "3", ",", "6", ",", "3",
+      ",", "6", ",", "3", ",", "6", ",", "3", ",", "6", ",", "3", ",", "6"}], 
+    "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 5, "; pi(n)=", 3, "; p_n=", 11, "; pi(p_n)=", 5, "; ", 11^
+   Rational[1, 2], "=", {3, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753394579*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "13", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["13"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "3", ",", "1", ",", "1", ",", "1", ",", "1", ",", "6", ",", "1", ",", "1",
+      ",", "1", ",", "1", ",", "6", ",", "1", ",", "1", ",", "1", ",", "1"}], 
+    "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 6, "; pi(n)=", 3, "; p_n=", 13, "; pi(p_n)=", 6, "; ", 13^
+   Rational[1, 2], "=", {3, 1, 1, 1, 1, 6, 1, 1, 1, 1, 6, 1, 1, 1, 1}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753398086*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "17", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["17"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "4", ",", "8", ",", "8", ",", "8", ",", "8", ",", "8", ",", "8", ",", "8",
+      ",", "8", ",", "8", ",", "8", ",", "8", ",", "8", ",", "8", ",", "8"}], 
+    "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 7, "; pi(n)=", 4, "; p_n=", 17, "; pi(p_n)=", 7, "; ", 17^
+   Rational[1, 2], "=", {4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753401346*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "19", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["19"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "4", ",", "2", ",", "1", ",", "3", ",", "1", ",", "2", ",", "8", ",", "2",
+      ",", "1", ",", "3", ",", "1", ",", "2", ",", "8", ",", "2", ",", "1"}], 
+    "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 8, "; pi(n)=", 4, "; p_n=", 19, "; pi(p_n)=", 8, "; ", 19^
+   Rational[1, 2], "=", {4, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753403757*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "23", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["23"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "4", ",", "1", ",", "3", ",", "1", ",", "8", ",", "1", ",", "3", ",", "1",
+      ",", "8", ",", "1", ",", "3", ",", "1", ",", "8", ",", "1", ",", "3"}], 
+    "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 9, "; pi(n)=", 4, "; p_n=", 23, "; pi(p_n)=", 9, "; ", 23^
+   Rational[1, 2], "=", {4, 1, 3, 1, 8, 1, 3, 1, 8, 1, 3, 1, 8, 1, 3}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753406555*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "29", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["29"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "2", ",", "1", ",", "1", ",", "2", ",", "10", ",", "2", ",", 
+     "1", ",", "1", ",", "2", ",", "10", ",", "2", ",", "1", ",", "1", ",", 
+     "2"}], "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 10, "; pi(n)=", 4, "; p_n=", 29, "; pi(p_n)=", 10, "; ", 29^
+   Rational[1, 2], "=", {5, 2, 1, 1, 2, 10, 2, 1, 1, 2, 10, 2, 1, 1, 2}, ";"],
+  
+  Editable->False]], "Print",
+ CellChangeTimes->{3.56018075341024*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "31", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["31"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "1", ",", "1", ",", "3", ",", "5", ",", "3", ",", "1", ",", "1",
+      ",", "10", ",", "1", ",", "1", ",", "3", ",", "5", ",", "3", ",", "1"}],
+     "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 11, "; pi(n)=", 5, "; p_n=", 31, "; pi(p_n)=", 11, "; ", 31^
+   Rational[1, 2], "=", {5, 1, 1, 3, 5, 3, 1, 1, 10, 1, 1, 3, 5, 3, 1}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753414042*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "37", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["37"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "12", ",", "12", ",", "12", ",", "12", ",", "12", ",", "12", 
+     ",", "12", ",", "12", ",", "12", ",", "12", ",", "12", ",", "12", ",", 
+     "12", ",", "12"}], "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 12, "; pi(n)=", 5, "; p_n=", 37, "; pi(p_n)=", 12, "; ", 37^
+   Rational[1, 2], "=", {6, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 
+   12, 12}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.56018075341741*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "13", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "41", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "13", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["41"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "2", ",", "2", ",", "12", ",", "2", ",", "2", ",", "12", ",", 
+     "2", ",", "2", ",", "12", ",", "2", ",", "2", ",", "12", ",", "2", ",", 
+     "2"}], "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 13, "; pi(n)=", 6, "; p_n=", 41, "; pi(p_n)=", 13, "; ", 41^
+   Rational[1, 2], "=", {6, 2, 2, 12, 2, 2, 12, 2, 2, 12, 2, 2, 12, 2, 2}, 
+   ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.56018075341992*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "14", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "43", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "14", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["43"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "1", ",", "1", ",", "3", ",", "1", ",", "5", ",", "1", ",", "3",
+      ",", "1", ",", "1", ",", "12", ",", "1", ",", "1", ",", "3", ",", "1"}],
+     "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 14, "; pi(n)=", 6, "; p_n=", 43, "; pi(p_n)=", 14, "; ", 43^
+   Rational[1, 2], "=", {6, 1, 1, 3, 1, 5, 1, 3, 1, 1, 12, 1, 1, 3, 1}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753422888*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "15", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "47", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "15", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["47"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "1", ",", "5", ",", "1", ",", "12", ",", "1", ",", "5", ",", 
+     "1", ",", "12", ",", "1", ",", "5", ",", "1", ",", "12", ",", "1", ",", 
+     "5"}], "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 15, "; pi(n)=", 6, "; p_n=", 47, "; pi(p_n)=", 15, "; ", 47^
+   Rational[1, 2], "=", {6, 1, 5, 1, 12, 1, 5, 1, 12, 1, 5, 1, 12, 1, 5}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753426676*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "16", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "53", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "16", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["53"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "3", ",", "1", ",", "1", ",", "3", ",", "14", ",", "3", ",", 
+     "1", ",", "1", ",", "3", ",", "14", ",", "3", ",", "1", ",", "1", ",", 
+     "3"}], "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 16, "; pi(n)=", 6, "; p_n=", 53, "; pi(p_n)=", 16, "; ", 53^
+   Rational[1, 2], "=", {7, 3, 1, 1, 3, 14, 3, 1, 1, 3, 14, 3, 1, 1, 3}, ";"],
+  
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753430493*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "17", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "59", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "17", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["59"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "1", ",", "2", ",", "7", ",", "2", ",", "1", ",", "14", ",", 
+     "1", ",", "2", ",", "7", ",", "2", ",", "1", ",", "14", ",", "1", ",", 
+     "2"}], "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 17, "; pi(n)=", 7, "; p_n=", 59, "; pi(p_n)=", 17, "; ", 59^
+   Rational[1, 2], "=", {7, 1, 2, 7, 2, 1, 14, 1, 2, 7, 2, 1, 14, 1, 2}, ";"],
+  
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5601807534338*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "18", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "61", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "18", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["61"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "1", ",", "4", ",", "3", ",", "1", ",", "2", ",", "2", ",", "1",
+      ",", "3", ",", "4", ",", "1", ",", "14", ",", "1", ",", "4", ",", "3"}],
+     "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 18, "; pi(n)=", 7, "; p_n=", 61, "; pi(p_n)=", 18, "; ", 61^
+   Rational[1, 2], "=", {7, 1, 4, 3, 1, 2, 2, 1, 3, 4, 1, 14, 1, 4, 3}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.56018075343639*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "19", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "67", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "19", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["67"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "5", ",", "2", ",", "1", ",", "1", ",", "7", ",", "1", ",", "1",
+      ",", "2", ",", "5", ",", "16", ",", "5", ",", "2", ",", "1", ",", "1"}],
+     "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 19, "; pi(n)=", 8, "; p_n=", 67, "; pi(p_n)=", 19, "; ", 67^
+   Rational[1, 2], "=", {8, 5, 2, 1, 1, 7, 1, 1, 2, 5, 16, 5, 2, 1, 1}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.56018075343975*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "20", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "71", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "20", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["71"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "2", ",", "2", ",", "1", ",", "7", ",", "1", ",", "2", ",", "2",
+      ",", "16", ",", "2", ",", "2", ",", "1", ",", "7", ",", "1", ",", "2"}],
+     "}"}], "\[InvisibleSpace]", "\<\";\"\>"}],
+  SequenceForm[
+  "n=", 20, "; pi(n)=", 8, "; p_n=", 71, "; pi(p_n)=", 20, "; ", 71^
+   Rational[1, 2], "=", {8, 2, 2, 1, 7, 1, 2, 2, 16, 2, 2, 1, 7, 1, 2}, ";"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180753443613*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[TextData[StyleBox["Fra\[CCedilla]\[ATilde]o continuada de naturais n\
+\[ATilde]o-primos n\[ATilde]o-quadrados-perfeitos",
+ FontSize->16,
+ FontColor->GrayLevel[0.5]]], "Text",
+ CellChangeTimes->{{3.534617576197514*^9, 3.534617657944952*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "4"}], ",", 
+   RowBox[{"i", "\[LessEqual]", 
+    RowBox[{"Prime", "[", "20", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"i", "++"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Not]", 
+        RowBox[{"PrimeQ", "[", "i", "]"}]}], "\[And]", 
+       RowBox[{
+        RowBox[{"Sqrt", "[", "i", "]"}], "!=", " ", 
+        RowBox[{"Floor", "[", 
+         RowBox[{"Sqrt", "[", "i", "]"}], "]"}]}]}], ",", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<n=\>\"", ",", "i", ",", "\"\<; pi(n)=\>\"", ",", 
+        RowBox[{"PrimePi", "[", "i", "]"}], ",", "\"\<; \>\"", ",", 
+        RowBox[{"Sqrt", "[", "i", "]"}], ",", "\"\<=\>\"", ",", 
+        RowBox[{"ContinuedFraction", "[", 
+         RowBox[{
+          RowBox[{"Sqrt", "[", "i", "]"}], ",", "15"}], "]"}]}], "]"}], ",", 
+      "False"}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.534607471391377*^9, 3.534607543457699*^9}, {
+   3.534607861340098*^9, 3.534607964338035*^9}, {3.534608181167927*^9, 
+   3.534608244585297*^9}, {3.534608276341223*^9, 3.534608282729744*^9}, {
+   3.534608420176219*^9, 3.534608456907412*^9}, {3.534610478217777*^9, 
+   3.534610489304081*^9}, {3.534610541220966*^9, 3.534610549615599*^9}, {
+   3.534610776784925*^9, 3.534610799191486*^9}, 3.534610846367991*^9, {
+   3.534610913820128*^9, 3.534610915284891*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["6"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "2", ",", "4", ",", "2", ",", "4", ",", "2", ",", "4", ",", "2",
+      ",", "4", ",", "2", ",", "4", ",", "2", ",", "4", ",", "2", ",", "4"}], 
+    "}"}]}],
+  SequenceForm[
+  "n=", 6, "; pi(n)=", 3, "; ", 6^Rational[1, 2], "=", {2, 2, 4, 2, 4, 2, 4, 
+   2, 4, 2, 4, 2, 4, 2, 4}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758010106*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    SqrtBox["2"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "1", ",", "4", ",", "1", ",", "4", ",", "1", ",", "4", ",", "1",
+      ",", "4", ",", "1", ",", "4", ",", "1", ",", "4", ",", "1", ",", "4"}], 
+    "}"}]}],
+  SequenceForm[
+  "n=", 8, "; pi(n)=", 4, "; ", 2 2^Rational[1, 2], "=", {2, 1, 4, 1, 4, 1, 4,
+    1, 4, 1, 4, 1, 4, 1, 4}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758179433*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["10"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "3", ",", "6", ",", "6", ",", "6", ",", "6", ",", "6", ",", "6", ",", "6",
+      ",", "6", ",", "6", ",", "6", ",", "6", ",", "6", ",", "6", ",", "6"}], 
+    "}"}]}],
+  SequenceForm[
+  "n=", 10, "; pi(n)=", 4, "; ", 10^Rational[1, 2], "=", {3, 6, 6, 6, 6, 6, 6,
+    6, 6, 6, 6, 6, 6, 6, 6}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758206753*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    SqrtBox["3"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "3", ",", "2", ",", "6", ",", "2", ",", "6", ",", "2", ",", "6", ",", "2",
+      ",", "6", ",", "2", ",", "6", ",", "2", ",", "6", ",", "2", ",", "6"}], 
+    "}"}]}],
+  SequenceForm[
+  "n=", 12, "; pi(n)=", 5, "; ", 2 3^Rational[1, 2], "=", {3, 2, 6, 2, 6, 2, 
+   6, 2, 6, 2, 6, 2, 6, 2, 6}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758210487*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "14", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["14"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "3", ",", "1", ",", "2", ",", "1", ",", "6", ",", "1", ",", "2", ",", "1",
+      ",", "6", ",", "1", ",", "2", ",", "1", ",", "6", ",", "1", ",", "2"}], 
+    "}"}]}],
+  SequenceForm[
+  "n=", 14, "; pi(n)=", 6, "; ", 14^Rational[1, 2], "=", {3, 1, 2, 1, 6, 1, 2,
+    1, 6, 1, 2, 1, 6, 1, 2}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758214205*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "15", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["15"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "3", ",", "1", ",", "6", ",", "1", ",", "6", ",", "1", ",", "6", ",", "1",
+      ",", "6", ",", "1", ",", "6", ",", "1", ",", "6", ",", "1", ",", "6"}], 
+    "}"}]}],
+  SequenceForm[
+  "n=", 15, "; pi(n)=", 6, "; ", 15^Rational[1, 2], "=", {3, 1, 6, 1, 6, 1, 6,
+    1, 6, 1, 6, 1, 6, 1, 6}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758217641*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "18", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"3", " ", 
+    SqrtBox["2"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "4", ",", "4", ",", "8", ",", "4", ",", "8", ",", "4", ",", "8", ",", "4",
+      ",", "8", ",", "4", ",", "8", ",", "4", ",", "8", ",", "4", ",", "8"}], 
+    "}"}]}],
+  SequenceForm[
+  "n=", 18, "; pi(n)=", 7, "; ", 3 2^Rational[1, 2], "=", {4, 4, 8, 4, 8, 4, 
+   8, 4, 8, 4, 8, 4, 8, 4, 8}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758220145*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "20", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    SqrtBox["5"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "4", ",", "2", ",", "8", ",", "2", ",", "8", ",", "2", ",", "8", ",", "2",
+      ",", "8", ",", "2", ",", "8", ",", "2", ",", "8", ",", "2", ",", "8"}], 
+    "}"}]}],
+  SequenceForm[
+  "n=", 20, "; pi(n)=", 8, "; ", 2 5^Rational[1, 2], "=", {4, 2, 8, 2, 8, 2, 
+   8, 2, 8, 2, 8, 2, 8, 2, 8}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758223617*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "21", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["21"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "4", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "8", ",", "1",
+      ",", "1", ",", "2", ",", "1", ",", "1", ",", "8", ",", "1", ",", "1"}], 
+    "}"}]}],
+  SequenceForm[
+  "n=", 21, "; pi(n)=", 8, "; ", 21^Rational[1, 2], "=", {4, 1, 1, 2, 1, 1, 8,
+    1, 1, 2, 1, 1, 8, 1, 1}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758227445*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "22", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["22"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "4", ",", "1", ",", "2", ",", "4", ",", "2", ",", "1", ",", "8", ",", "1",
+      ",", "2", ",", "4", ",", "2", ",", "1", ",", "8", ",", "1", ",", "2"}], 
+    "}"}]}],
+  SequenceForm[
+  "n=", 22, "; pi(n)=", 8, "; ", 22^Rational[1, 2], "=", {4, 1, 2, 4, 2, 1, 8,
+    1, 2, 4, 2, 1, 8, 1, 2}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758231078*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "24", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    SqrtBox["6"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "4", ",", "1", ",", "8", ",", "1", ",", "8", ",", "1", ",", "8", ",", "1",
+      ",", "8", ",", "1", ",", "8", ",", "1", ",", "8", ",", "1", ",", "8"}], 
+    "}"}]}],
+  SequenceForm[
+  "n=", 24, "; pi(n)=", 9, "; ", 2 6^Rational[1, 2], "=", {4, 1, 8, 1, 8, 1, 
+   8, 1, 8, 1, 8, 1, 8, 1, 8}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758233906*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "26", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["26"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "10", ",", "10", ",", "10", ",", "10", ",", "10", ",", "10", 
+     ",", "10", ",", "10", ",", "10", ",", "10", ",", "10", ",", "10", ",", 
+     "10", ",", "10"}], "}"}]}],
+  SequenceForm[
+  "n=", 26, "; pi(n)=", 9, "; ", 26^Rational[1, 2], "=", {5, 10, 10, 10, 10, 
+   10, 10, 10, 10, 10, 10, 10, 10, 10, 10}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758236659*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "27", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"3", " ", 
+    SqrtBox["3"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "5", ",", "10", ",", "5", ",", "10", ",", "5", ",", "10", ",", 
+     "5", ",", "10", ",", "5", ",", "10", ",", "5", ",", "10", ",", "5", ",", 
+     "10"}], "}"}]}],
+  SequenceForm[
+  "n=", 27, "; pi(n)=", 9, "; ", 3 3^Rational[1, 2], "=", {5, 5, 10, 5, 10, 5,
+    10, 5, 10, 5, 10, 5, 10, 5, 10}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758239838*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "28", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    SqrtBox["7"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "3", ",", "2", ",", "3", ",", "10", ",", "3", ",", "2", ",", 
+     "3", ",", "10", ",", "3", ",", "2", ",", "3", ",", "10", ",", "3", ",", 
+     "2"}], "}"}]}],
+  SequenceForm[
+  "n=", 28, "; pi(n)=", 9, "; ", 2 7^Rational[1, 2], "=", {5, 3, 2, 3, 10, 3, 
+   2, 3, 10, 3, 2, 3, 10, 3, 2}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758243649*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "30", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["30"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "2", ",", "10", ",", "2", ",", "10", ",", "2", ",", "10", ",", 
+     "2", ",", "10", ",", "2", ",", "10", ",", "2", ",", "10", ",", "2", ",", 
+     "10"}], "}"}]}],
+  SequenceForm[
+  "n=", 30, "; pi(n)=", 10, "; ", 30^Rational[1, 2], "=", {5, 2, 10, 2, 10, 2,
+    10, 2, 10, 2, 10, 2, 10, 2, 10}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758247406*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "32", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"4", " ", 
+    SqrtBox["2"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "1", ",", "1", ",", "1", ",", "10", ",", "1", ",", "1", ",", 
+     "1", ",", "10", ",", "1", ",", "1", ",", "1", ",", "10", ",", "1", ",", 
+     "1"}], "}"}]}],
+  SequenceForm[
+  "n=", 32, "; pi(n)=", 11, "; ", 4 2^Rational[1, 2], "=", {5, 1, 1, 1, 10, 1,
+    1, 1, 10, 1, 1, 1, 10, 1, 1}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758250186*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "33", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["33"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "1", ",", "2", ",", "1", ",", "10", ",", "1", ",", "2", ",", 
+     "1", ",", "10", ",", "1", ",", "2", ",", "1", ",", "10", ",", "1", ",", 
+     "2"}], "}"}]}],
+  SequenceForm[
+  "n=", 33, "; pi(n)=", 11, "; ", 33^Rational[1, 2], "=", {5, 1, 2, 1, 10, 1, 
+   2, 1, 10, 1, 2, 1, 10, 1, 2}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758253767*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "34", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["34"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "1", ",", "4", ",", "1", ",", "10", ",", "1", ",", "4", ",", 
+     "1", ",", "10", ",", "1", ",", "4", ",", "1", ",", "10", ",", "1", ",", 
+     "4"}], "}"}]}],
+  SequenceForm[
+  "n=", 34, "; pi(n)=", 11, "; ", 34^Rational[1, 2], "=", {5, 1, 4, 1, 10, 1, 
+   4, 1, 10, 1, 4, 1, 10, 1, 4}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758257761*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "35", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["35"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "1", ",", "10", ",", "1", ",", "10", ",", "1", ",", "10", ",", 
+     "1", ",", "10", ",", "1", ",", "10", ",", "1", ",", "10", ",", "1", ",", 
+     "10"}], "}"}]}],
+  SequenceForm[
+  "n=", 35, "; pi(n)=", 11, "; ", 35^Rational[1, 2], "=", {5, 1, 10, 1, 10, 1,
+    10, 1, 10, 1, 10, 1, 10, 1, 10}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758261613*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "38", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["38"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "6", ",", "12", ",", "6", ",", "12", ",", "6", ",", "12", ",", 
+     "6", ",", "12", ",", "6", ",", "12", ",", "6", ",", "12", ",", "6", ",", 
+     "12"}], "}"}]}],
+  SequenceForm[
+  "n=", 38, "; pi(n)=", 12, "; ", 38^Rational[1, 2], "=", {6, 6, 12, 6, 12, 6,
+    12, 6, 12, 6, 12, 6, 12, 6, 12}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758492531*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "39", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["39"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "4", ",", "12", ",", "4", ",", "12", ",", "4", ",", "12", ",", 
+     "4", ",", "12", ",", "4", ",", "12", ",", "4", ",", "12", ",", "4", ",", 
+     "12"}], "}"}]}],
+  SequenceForm[
+  "n=", 39, "; pi(n)=", 12, "; ", 39^Rational[1, 2], "=", {6, 4, 12, 4, 12, 4,
+    12, 4, 12, 4, 12, 4, 12, 4, 12}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758525545*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "40", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    SqrtBox["10"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "3", ",", "12", ",", "3", ",", "12", ",", "3", ",", "12", ",", 
+     "3", ",", "12", ",", "3", ",", "12", ",", "3", ",", "12", ",", "3", ",", 
+     "12"}], "}"}]}],
+  SequenceForm[
+  "n=", 40, "; pi(n)=", 12, "; ", 2 10^Rational[1, 2], "=", {6, 3, 12, 3, 12, 
+   3, 12, 3, 12, 3, 12, 3, 12, 3, 12}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758528337*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "42", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "13", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["42"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "2", ",", "12", ",", "2", ",", "12", ",", "2", ",", "12", ",", 
+     "2", ",", "12", ",", "2", ",", "12", ",", "2", ",", "12", ",", "2", ",", 
+     "12"}], "}"}]}],
+  SequenceForm[
+  "n=", 42, "; pi(n)=", 13, "; ", 42^Rational[1, 2], "=", {6, 2, 12, 2, 12, 2,
+    12, 2, 12, 2, 12, 2, 12, 2, 12}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758530978*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "44", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "14", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    SqrtBox["11"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1",
+      ",", "12", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1"}],
+     "}"}]}],
+  SequenceForm[
+  "n=", 44, "; pi(n)=", 14, "; ", 2 11^Rational[1, 2], "=", {6, 1, 1, 1, 2, 1,
+    1, 1, 12, 1, 1, 1, 2, 1, 1}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758534932*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "45", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "14", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"3", " ", 
+    SqrtBox["5"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "1", ",", "2", ",", "2", ",", "2", ",", "1", ",", "12", ",", 
+     "1", ",", "2", ",", "2", ",", "2", ",", "1", ",", "12", ",", "1", ",", 
+     "2"}], "}"}]}],
+  SequenceForm[
+  "n=", 45, "; pi(n)=", 14, "; ", 3 5^Rational[1, 2], "=", {6, 1, 2, 2, 2, 1, 
+   12, 1, 2, 2, 2, 1, 12, 1, 2}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758538835*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "46", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "14", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["46"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "1", ",", "3", ",", "1", ",", "1", ",", "2", ",", "6", ",", "2",
+      ",", "1", ",", "1", ",", "3", ",", "1", ",", "12", ",", "1", ",", "3"}],
+     "}"}]}],
+  SequenceForm[
+  "n=", 46, "; pi(n)=", 14, "; ", 46^Rational[1, 2], "=", {6, 1, 3, 1, 1, 2, 
+   6, 2, 1, 1, 3, 1, 12, 1, 3}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758542757*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "48", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "15", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"4", " ", 
+    SqrtBox["3"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "1", ",", "12", ",", "1", ",", "12", ",", "1", ",", "12", ",", 
+     "1", ",", "12", ",", "1", ",", "12", ",", "1", ",", "12", ",", "1", ",", 
+     "12"}], "}"}]}],
+  SequenceForm[
+  "n=", 48, "; pi(n)=", 15, "; ", 4 3^Rational[1, 2], "=", {6, 1, 12, 1, 12, 
+   1, 12, 1, 12, 1, 12, 1, 12, 1, 12}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758545503*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "50", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "15", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"5", " ", 
+    SqrtBox["2"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "14", ",", "14", ",", "14", ",", "14", ",", "14", ",", "14", 
+     ",", "14", ",", "14", ",", "14", ",", "14", ",", "14", ",", "14", ",", 
+     "14", ",", "14"}], "}"}]}],
+  SequenceForm[
+  "n=", 50, "; pi(n)=", 15, "; ", 5 2^Rational[1, 2], "=", {7, 14, 14, 14, 14,
+    14, 14, 14, 14, 14, 14, 14, 14, 14, 14}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758548142*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "51", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "15", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["51"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "7", ",", "14", ",", "7", ",", "14", ",", "7", ",", "14", ",", 
+     "7", ",", "14", ",", "7", ",", "14", ",", "7", ",", "14", ",", "7", ",", 
+     "14"}], "}"}]}],
+  SequenceForm[
+  "n=", 51, "; pi(n)=", 15, "; ", 51^Rational[1, 2], "=", {7, 7, 14, 7, 14, 7,
+    14, 7, 14, 7, 14, 7, 14, 7, 14}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.56018075855278*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "52", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "15", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    SqrtBox["13"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "4", ",", "1", ",", "2", ",", "1", ",", "4", ",", "14", ",", 
+     "4", ",", "1", ",", "2", ",", "1", ",", "4", ",", "14", ",", "4", ",", 
+     "1"}], "}"}]}],
+  SequenceForm[
+  "n=", 52, "; pi(n)=", 15, "; ", 2 13^Rational[1, 2], "=", {7, 4, 1, 2, 1, 4,
+    14, 4, 1, 2, 1, 4, 14, 4, 1}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758556763*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "54", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "16", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"3", " ", 
+    SqrtBox["6"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "2", ",", "1", ",", "6", ",", "1", ",", "2", ",", "14", ",", 
+     "2", ",", "1", ",", "6", ",", "1", ",", "2", ",", "14", ",", "2", ",", 
+     "1"}], "}"}]}],
+  SequenceForm[
+  "n=", 54, "; pi(n)=", 16, "; ", 3 6^Rational[1, 2], "=", {7, 2, 1, 6, 1, 2, 
+   14, 2, 1, 6, 1, 2, 14, 2, 1}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.56018075856052*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "55", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "16", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["55"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "2", ",", "2", ",", "2", ",", "14", ",", "2", ",", "2", ",", 
+     "2", ",", "14", ",", "2", ",", "2", ",", "2", ",", "14", ",", "2", ",", 
+     "2"}], "}"}]}],
+  SequenceForm[
+  "n=", 55, "; pi(n)=", 16, "; ", 55^Rational[1, 2], "=", {7, 2, 2, 2, 14, 2, 
+   2, 2, 14, 2, 2, 2, 14, 2, 2}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758563855*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "56", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "16", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    SqrtBox["14"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "2", ",", "14", ",", "2", ",", "14", ",", "2", ",", "14", ",", 
+     "2", ",", "14", ",", "2", ",", "14", ",", "2", ",", "14", ",", "2", ",", 
+     "14"}], "}"}]}],
+  SequenceForm[
+  "n=", 56, "; pi(n)=", 16, "; ", 2 14^Rational[1, 2], "=", {7, 2, 14, 2, 14, 
+   2, 14, 2, 14, 2, 14, 2, 14, 2, 14}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758567173*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "57", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "16", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["57"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "1", ",", "1", ",", "4", ",", "1", ",", "1", ",", "14", ",", 
+     "1", ",", "1", ",", "4", ",", "1", ",", "1", ",", "14", ",", "1", ",", 
+     "1"}], "}"}]}],
+  SequenceForm[
+  "n=", 57, "; pi(n)=", 16, "; ", 57^Rational[1, 2], "=", {7, 1, 1, 4, 1, 1, 
+   14, 1, 1, 4, 1, 1, 14, 1, 1}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758571112*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "58", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "16", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["58"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+     "14", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+     "14"}], "}"}]}],
+  SequenceForm[
+  "n=", 58, "; pi(n)=", 16, "; ", 58^Rational[1, 2], "=", {7, 1, 1, 1, 1, 1, 
+   1, 14, 1, 1, 1, 1, 1, 1, 14}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758575043*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "60", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "17", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    SqrtBox["15"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "1", ",", "2", ",", "1", ",", "14", ",", "1", ",", "2", ",", 
+     "1", ",", "14", ",", "1", ",", "2", ",", "1", ",", "14", ",", "1", ",", 
+     "2"}], "}"}]}],
+  SequenceForm[
+  "n=", 60, "; pi(n)=", 17, "; ", 2 15^Rational[1, 2], "=", {7, 1, 2, 1, 14, 
+   1, 2, 1, 14, 1, 2, 1, 14, 1, 2}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758578253*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "62", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "18", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["62"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "1", ",", "6", ",", "1", ",", "14", ",", "1", ",", "6", ",", 
+     "1", ",", "14", ",", "1", ",", "6", ",", "1", ",", "14", ",", "1", ",", 
+     "6"}], "}"}]}],
+  SequenceForm[
+  "n=", 62, "; pi(n)=", 18, "; ", 62^Rational[1, 2], "=", {7, 1, 6, 1, 14, 1, 
+   6, 1, 14, 1, 6, 1, 14, 1, 6}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758580967*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "63", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "18", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"3", " ", 
+    SqrtBox["7"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "1", ",", "14", ",", "1", ",", "14", ",", "1", ",", "14", ",", 
+     "1", ",", "14", ",", "1", ",", "14", ",", "1", ",", "14", ",", "1", ",", 
+     "14"}], "}"}]}],
+  SequenceForm[
+  "n=", 63, "; pi(n)=", 18, "; ", 3 7^Rational[1, 2], "=", {7, 1, 14, 1, 14, 
+   1, 14, 1, 14, 1, 14, 1, 14, 1, 14}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758584468*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "65", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "18", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["65"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "16", ",", "16", ",", "16", ",", "16", ",", "16", ",", "16", 
+     ",", "16", ",", "16", ",", "16", ",", "16", ",", "16", ",", "16", ",", 
+     "16", ",", "16"}], "}"}]}],
+  SequenceForm[
+  "n=", 65, "; pi(n)=", 18, "; ", 65^Rational[1, 2], "=", {8, 16, 16, 16, 16, 
+   16, 16, 16, 16, 16, 16, 16, 16, 16, 16}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.56018075858846*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "66", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "18", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["66"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "8", ",", "16", ",", "8", ",", "16", ",", "8", ",", "16", ",", 
+     "8", ",", "16", ",", "8", ",", "16", ",", "8", ",", "16", ",", "8", ",", 
+     "16"}], "}"}]}],
+  SequenceForm[
+  "n=", 66, "; pi(n)=", 18, "; ", 66^Rational[1, 2], "=", {8, 8, 16, 8, 16, 8,
+    16, 8, 16, 8, 16, 8, 16, 8, 16}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758592449*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "68", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "19", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    SqrtBox["17"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "4", ",", "16", ",", "4", ",", "16", ",", "4", ",", "16", ",", 
+     "4", ",", "16", ",", "4", ",", "16", ",", "4", ",", "16", ",", "4", ",", 
+     "16"}], "}"}]}],
+  SequenceForm[
+  "n=", 68, "; pi(n)=", 19, "; ", 2 17^Rational[1, 2], "=", {8, 4, 16, 4, 16, 
+   4, 16, 4, 16, 4, 16, 4, 16, 4, 16}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758595424*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "69", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "19", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["69"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "3", ",", "3", ",", "1", ",", "4", ",", "1", ",", "3", ",", "3",
+      ",", "16", ",", "3", ",", "3", ",", "1", ",", "4", ",", "1", ",", "3"}],
+     "}"}]}],
+  SequenceForm[
+  "n=", 69, "; pi(n)=", 19, "; ", 69^Rational[1, 2], "=", {8, 3, 3, 1, 4, 1, 
+   3, 3, 16, 3, 3, 1, 4, 1, 3}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758598162*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "70", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "19", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   SqrtBox["70"], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "2", ",", "1", ",", "2", ",", "1", ",", "2", ",", "16", ",", 
+     "2", ",", "1", ",", "2", ",", "1", ",", "2", ",", "16", ",", "2", ",", 
+     "1"}], "}"}]}],
+  SequenceForm[
+  "n=", 70, "; pi(n)=", 19, "; ", 70^Rational[1, 2], "=", {8, 2, 1, 2, 1, 2, 
+   16, 2, 1, 2, 1, 2, 16, 2, 1}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758601776*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "72", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "20", 
+   "\[InvisibleSpace]", "\<\"; \"\>", "\[InvisibleSpace]", 
+   RowBox[{"6", " ", 
+    SqrtBox["2"]}], "\[InvisibleSpace]", "\<\"=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "2", ",", "16", ",", "2", ",", "16", ",", "2", ",", "16", ",", 
+     "2", ",", "16", ",", "2", ",", "16", ",", "2", ",", "16", ",", "2", ",", 
+     "16"}], "}"}]}],
+  SequenceForm[
+  "n=", 72, "; pi(n)=", 20, "; ", 6 2^Rational[1, 2], "=", {8, 2, 16, 2, 16, 
+   2, 16, 2, 16, 2, 16, 2, 16, 2, 16}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180758605765*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[TextData[StyleBox["Fra\[CCedilla]\[ATilde]o continuada de quadrados \
+perfeitos",
+ FontSize->16,
+ FontColor->GrayLevel[0.5]]], "Text",
+ CellChangeTimes->{{3.534617734171561*^9, 3.534617748122911*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "0"}], ",", 
+   RowBox[{"i", "<", "20"}], ",", 
+   RowBox[{
+    RowBox[{"i", "++"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<n=\>\"", ",", "i", ",", "\"\<; pi(n)=\>\"", ",", 
+      RowBox[{"PrimePi", "[", "i", "]"}], ",", " ", "\"\<; p_n=\>\"", ",", 
+      RowBox[{"Prime", "[", "i", "]"}], ",", "\"\<; pi(p_n)=\>\"", ",", 
+      RowBox[{"PrimePi", "[", 
+       RowBox[{"Prime", "[", "i", "]"}], "]"}], ",", "\[IndentingNewLine]", 
+      "\"\<; n-pi(n)=\>\"", ",", 
+      RowBox[{"i", "-", 
+       RowBox[{"PrimePi", "[", "i", "]"}]}], ",", "\"\<; p_n-pi(p_n)=\>\"", 
+      ",", 
+      RowBox[{
+       RowBox[{"Prime", "[", "i", "]"}], "-", 
+       RowBox[{"PrimePi", "[", 
+        RowBox[{"Prime", "[", "i", "]"}], "]"}]}]}], "]"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.53461096714408*^9, 3.53461101411169*^9}, {
+  3.534611048408631*^9, 3.53461109989433*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "0", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm[
+  "n=", 1, "; pi(n)=", 0, "; p_n=", 2, "; pi(p_n)=", 1, "; n-pi(n)=", 1, 
+   "; p_n-pi(p_n)=", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762835462*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm[
+  "n=", 2, "; pi(n)=", 1, "; p_n=", 3, "; pi(p_n)=", 2, "; n-pi(n)=", 1, 
+   "; p_n-pi(p_n)=", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762908475*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "2"}],
+  SequenceForm[
+  "n=", 3, "; pi(n)=", 2, "; p_n=", 5, "; pi(p_n)=", 3, "; n-pi(n)=", 1, 
+   "; p_n-pi(p_n)=", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762941663*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "3"}],
+  SequenceForm[
+  "n=", 4, "; pi(n)=", 2, "; p_n=", 7, "; pi(p_n)=", 4, "; n-pi(n)=", 2, 
+   "; p_n-pi(p_n)=", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762944812*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "6"}],
+  SequenceForm[
+  "n=", 5, "; pi(n)=", 3, "; p_n=", 11, "; pi(p_n)=", 5, "; n-pi(n)=", 2, 
+   "; p_n-pi(p_n)=", 6],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762947864*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "13", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "7"}],
+  SequenceForm[
+  "n=", 6, "; pi(n)=", 3, "; p_n=", 13, "; pi(p_n)=", 6, "; n-pi(n)=", 3, 
+   "; p_n-pi(p_n)=", 7],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762950919*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "17", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "10"}],
+  
+  SequenceForm[
+  "n=", 7, "; pi(n)=", 4, "; p_n=", 17, "; pi(p_n)=", 7, "; n-pi(n)=", 3, 
+   "; p_n-pi(p_n)=", 10],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762953678*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "19", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "11"}],
+  
+  SequenceForm[
+  "n=", 8, "; pi(n)=", 4, "; p_n=", 19, "; pi(p_n)=", 8, "; n-pi(n)=", 4, 
+   "; p_n-pi(p_n)=", 11],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.56018076295563*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "23", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "14"}],
+  
+  SequenceForm[
+  "n=", 9, "; pi(n)=", 4, "; p_n=", 23, "; pi(p_n)=", 9, "; n-pi(n)=", 5, 
+   "; p_n-pi(p_n)=", 14],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762957563*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "29", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "19"}],
+  
+  SequenceForm[
+  "n=", 10, "; pi(n)=", 4, "; p_n=", 29, "; pi(p_n)=", 10, "; n-pi(n)=", 6, 
+   "; p_n-pi(p_n)=", 19],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762960442*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "31", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "20"}],
+  
+  SequenceForm[
+  "n=", 11, "; pi(n)=", 5, "; p_n=", 31, "; pi(p_n)=", 11, "; n-pi(n)=", 6, 
+   "; p_n-pi(p_n)=", 20],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762963457*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "37", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "25"}],
+  
+  SequenceForm[
+  "n=", 12, "; pi(n)=", 5, "; p_n=", 37, "; pi(p_n)=", 12, "; n-pi(n)=", 7, 
+   "; p_n-pi(p_n)=", 25],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762966648*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "13", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "41", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "13", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "28"}],
+  
+  SequenceForm[
+  "n=", 13, "; pi(n)=", 6, "; p_n=", 41, "; pi(p_n)=", 13, "; n-pi(n)=", 7, 
+   "; p_n-pi(p_n)=", 28],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762969537*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "14", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "43", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "14", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "29"}],
+  
+  SequenceForm[
+  "n=", 14, "; pi(n)=", 6, "; p_n=", 43, "; pi(p_n)=", 14, "; n-pi(n)=", 8, 
+   "; p_n-pi(p_n)=", 29],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762971609*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "15", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "47", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "15", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "32"}],
+  
+  SequenceForm[
+  "n=", 15, "; pi(n)=", 6, "; p_n=", 47, "; pi(p_n)=", 15, "; n-pi(n)=", 9, 
+   "; p_n-pi(p_n)=", 32],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762973564*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "16", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "53", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "16", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "37"}],
+  
+  SequenceForm[
+  "n=", 16, "; pi(n)=", 6, "; p_n=", 53, "; pi(p_n)=", 16, "; n-pi(n)=", 10, 
+   "; p_n-pi(p_n)=", 37],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762976331*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "17", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "59", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "17", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "42"}],
+  
+  SequenceForm[
+  "n=", 17, "; pi(n)=", 7, "; p_n=", 59, "; pi(p_n)=", 17, "; n-pi(n)=", 10, 
+   "; p_n-pi(p_n)=", 42],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762979362*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "18", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "61", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "18", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "43"}],
+  
+  SequenceForm[
+  "n=", 18, "; pi(n)=", 7, "; p_n=", 61, "; pi(p_n)=", 18, "; n-pi(n)=", 11, 
+   "; p_n-pi(p_n)=", 43],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762982383*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "19", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "67", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "19", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "48"}],
+  
+  SequenceForm[
+  "n=", 19, "; pi(n)=", 8, "; p_n=", 67, "; pi(p_n)=", 19, "; n-pi(n)=", 11, 
+   "; p_n-pi(p_n)=", 48],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762985455*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", "20", 
+   "\[InvisibleSpace]", "\<\"; pi(n)=\"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\"; p_n=\"\>", "\[InvisibleSpace]", "71", 
+   "\[InvisibleSpace]", "\<\"; pi(p_n)=\"\>", "\[InvisibleSpace]", "20", 
+   "\[InvisibleSpace]", "\<\"; n-pi(n)=\"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\"; p_n-pi(p_n)=\"\>", "\[InvisibleSpace]", "51"}],
+  
+  SequenceForm[
+  "n=", 20, "; pi(n)=", 8, "; p_n=", 71, "; pi(p_n)=", 20, "; n-pi(n)=", 12, 
+   "; p_n-pi(p_n)=", 51],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.560180762987573*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1280, 749},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Linux x86 (32-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 306, 7, 97, "Subtitle"],
+Cell[CellGroupData[{
+Cell[876, 31, 177, 4, 88, "Title"],
+Cell[1056, 37, 190, 3, 34, "Text"],
+Cell[CellGroupData[{
+Cell[1271, 44, 2100, 37, 69, "Input"],
+Cell[CellGroupData[{
+Cell[3396, 85, 895, 17, 28, "Print"],
+Cell[4294, 104, 895, 17, 28, "Print"],
+Cell[5192, 123, 894, 17, 28, "Print"],
+Cell[6089, 142, 895, 17, 28, "Print"],
+Cell[6987, 161, 899, 17, 28, "Print"],
+Cell[7889, 180, 899, 17, 28, "Print"],
+Cell[8791, 199, 899, 17, 28, "Print"],
+Cell[9693, 218, 899, 17, 28, "Print"],
+Cell[10595, 237, 899, 17, 28, "Print"],
+Cell[11497, 256, 910, 18, 28, "Print"],
+Cell[12410, 276, 905, 17, 28, "Print"],
+Cell[13318, 295, 935, 18, 28, "Print"],
+Cell[14256, 315, 915, 18, 28, "Print"],
+Cell[15174, 335, 905, 17, 28, "Print"],
+Cell[16082, 354, 910, 17, 28, "Print"],
+Cell[16995, 373, 911, 18, 28, "Print"],
+Cell[17909, 393, 909, 18, 28, "Print"],
+Cell[18821, 413, 904, 17, 28, "Print"],
+Cell[19728, 432, 904, 17, 28, "Print"],
+Cell[20635, 451, 905, 17, 28, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[21567, 472, 245, 4, 34, "Text"],
+Cell[CellGroupData[{
+Cell[21837, 480, 1417, 31, 50, "Input"],
+Cell[CellGroupData[{
+Cell[23279, 515, 684, 15, 28, "Print"],
+Cell[23966, 532, 711, 16, 28, "Print"],
+Cell[24680, 550, 688, 15, 28, "Print"],
+Cell[25371, 567, 713, 16, 28, "Print"],
+Cell[26087, 585, 688, 15, 28, "Print"],
+Cell[26778, 602, 688, 15, 28, "Print"],
+Cell[27469, 619, 713, 16, 28, "Print"],
+Cell[28185, 637, 713, 16, 28, "Print"],
+Cell[28901, 655, 688, 15, 28, "Print"],
+Cell[29592, 672, 688, 15, 28, "Print"],
+Cell[30283, 689, 713, 16, 28, "Print"],
+Cell[30999, 707, 717, 15, 28, "Print"],
+Cell[31719, 724, 728, 16, 28, "Print"],
+Cell[32450, 742, 720, 16, 28, "Print"],
+Cell[33173, 760, 705, 15, 28, "Print"],
+Cell[33881, 777, 722, 16, 28, "Print"],
+Cell[34606, 795, 697, 15, 28, "Print"],
+Cell[35306, 812, 697, 15, 28, "Print"],
+Cell[36006, 829, 705, 15, 28, "Print"],
+Cell[36714, 846, 705, 15, 28, "Print"],
+Cell[37422, 863, 705, 15, 28, "Print"],
+Cell[38130, 880, 732, 16, 28, "Print"],
+Cell[38865, 898, 705, 15, 28, "Print"],
+Cell[39573, 915, 719, 16, 28, "Print"],
+Cell[40295, 933, 720, 16, 28, "Print"],
+Cell[41018, 951, 692, 15, 28, "Print"],
+Cell[41713, 968, 730, 16, 28, "Print"],
+Cell[42446, 986, 744, 16, 28, "Print"],
+Cell[43193, 1004, 704, 15, 28, "Print"],
+Cell[43900, 1021, 722, 16, 28, "Print"],
+Cell[44625, 1039, 719, 16, 28, "Print"],
+Cell[45347, 1057, 697, 15, 28, "Print"],
+Cell[46047, 1074, 732, 16, 28, "Print"],
+Cell[46782, 1092, 695, 15, 28, "Print"],
+Cell[47480, 1109, 695, 15, 28, "Print"],
+Cell[48178, 1126, 724, 16, 28, "Print"],
+Cell[48905, 1144, 697, 15, 28, "Print"],
+Cell[49605, 1161, 730, 16, 28, "Print"],
+Cell[50338, 1179, 718, 15, 28, "Print"],
+Cell[51059, 1196, 705, 15, 28, "Print"],
+Cell[51767, 1213, 732, 16, 28, "Print"],
+Cell[52502, 1231, 692, 15, 28, "Print"],
+Cell[53197, 1248, 695, 15, 28, "Print"],
+Cell[53895, 1265, 730, 16, 28, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[54652, 1285, 205, 4, 34, "Text"],
+Cell[CellGroupData[{
+Cell[54882, 1293, 971, 23, 69, "Input"],
+Cell[CellGroupData[{
+Cell[55878, 1320, 635, 12, 23, "Print"],
+Cell[56516, 1334, 635, 12, 23, "Print"],
+Cell[57154, 1348, 635, 12, 23, "Print"],
+Cell[57792, 1362, 635, 12, 23, "Print"],
+Cell[58430, 1376, 637, 12, 23, "Print"],
+Cell[59070, 1390, 637, 12, 23, "Print"],
+Cell[59710, 1404, 642, 13, 23, "Print"],
+Cell[60355, 1419, 641, 13, 23, "Print"],
+Cell[60999, 1434, 642, 13, 23, "Print"],
+Cell[61644, 1449, 646, 13, 23, "Print"],
+Cell[62293, 1464, 646, 13, 23, "Print"],
+Cell[62942, 1479, 646, 13, 23, "Print"],
+Cell[63591, 1494, 646, 13, 23, "Print"],
+Cell[64240, 1509, 646, 13, 23, "Print"],
+Cell[64889, 1524, 646, 13, 23, "Print"],
+Cell[65538, 1539, 648, 13, 23, "Print"],
+Cell[66189, 1554, 648, 13, 23, "Print"],
+Cell[66840, 1569, 648, 13, 23, "Print"],
+Cell[67491, 1584, 648, 13, 23, "Print"],
+Cell[68142, 1599, 648, 13, 23, "Print"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
