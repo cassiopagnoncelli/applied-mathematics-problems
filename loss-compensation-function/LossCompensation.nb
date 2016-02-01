@@ -1,0 +1,226 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8067,        217]
+NotebookOptionsPosition[      7460,        190]
+NotebookOutlinePosition[      7795,        205]
+CellTagsIndexPosition[      7752,        202]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Loss compensation function", "Title",
+ CellChangeTimes->{{3.653884869856855*^9, 3.653884894139513*^9}}],
+
+Cell["\<\
+Suppose there is a corporation with an initial capital of 1.
+
+This company loses \[OpenCurlyDoubleQuote]X\[CloseCurlyDoubleQuote] in a bet, \
+thus reducing its net worth to 1 - X.
+
+In order to regain its initial capital of 1, it is necessary to earn Y in \
+order to make up a final net worth of (1 - x) * (1 + x + y). The first parcel \
+regards to the loser bet, and the second to the supposed winner bet.
+
+Y is thus\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.65388489546453*^9, 3.653885191474553*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "x"}], "]"}]}], "\[Equal]", 
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "+", "x", "+", "y"}], "]"}]}], "&&", 
+    RowBox[{"0", "\[LessEqual]", "x", "<", "1"}]}], ",", "y"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.628932841398551*^9, 3.628932923434717*^9}, {
+  3.628933110440899*^9, 3.628933157392741*^9}, {3.628933199627735*^9, 
+  3.628933212884776*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"y", "\[Rule]", 
+    RowBox[{"ConditionalExpression", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        SuperscriptBox["x", "2"], 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "x"}]]}], ",", 
+      RowBox[{"0", "\[LessEqual]", "x", "<", "1"}]}], "]"}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.628932859749419*^9, {3.628932915678855*^9, 3.628932925545144*^9}, {
+   3.628933121491427*^9, 3.6289331582637653`*^9}, 3.628933204482442*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Below we see the excess ",
+ Cell[BoxData[
+  RowBox[{"y", "\[Equal]", 
+   RowBox[{"-", 
+    FractionBox[
+     SuperscriptBox["x", "2"], 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "x"}]]}]}]], "Output",
+  GeneratedCell->False,
+  CellAutoOverwrite->False,
+  CellChangeTimes->{
+   3.628932859749419*^9, {3.628932915678855*^9, 3.628932925545144*^9}, {
+    3.628933121491427*^9, 3.6289331582637653`*^9}, 3.628933204482442*^9}],
+ " to be compensated"
+}], "Subsubtitle",
+ CellChangeTimes->{{3.628933545039048*^9, 3.6289335918234873`*^9}, {
+  3.653885197355473*^9, 3.65388521841003*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   FractionBox[
+    SuperscriptBox["x", "2"], 
+    RowBox[{"1", "-", "x"}]], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "0.9"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.628933493651616*^9, 3.628933503016362*^9}, {
+  3.6289336730815487`*^9, 3.628933722934229*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1: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
+RM0es5gcEyb+B0B9O98=
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  Method->{},
+  PlotRange->{{0, 0.9}, {0., 4.4657033715569785`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.628933505447269*^9, {3.6289336891760607`*^9, 3.628933723917163*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440, 853},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 109, 1, 90, "Title"],
+Cell[691, 25, 512, 12, 161, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1228, 41, 504, 14, 32, "Input"],
+Cell[1735, 57, 527, 15, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2299, 77, 599, 17, 39, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[2923, 98, 331, 9, 52, "Input"],
+Cell[3257, 109, 4163, 76, 250, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
