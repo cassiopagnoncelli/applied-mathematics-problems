@@ -1,0 +1,23 @@
+/* Convert redshift (z) into giga-years for galaxies. */
+
+/* Define constants and conversions */
+H0 : 70; /* Hubble constant in km/s/Mpc */
+Gyr_per_sec : 3.1536e16; /* Seconds in a Gyr */
+km_per_Mpc : 3.0857e19; /* km in a Mpc */
+H0_gyr : H0 / (km_per_Mpc / Gyr_per_sec); /* H0 in Gyr^-1 */
+
+/* Define the matter and dark energy density parameters */
+omega_m : 0.3;
+omega_lambda : 0.7;
+
+/* Define the Hubble parameter as a function of zp */
+H(zp) := H0_gyr * sqrt(omega_m * (1+zp)^3 + omega_lambda);
+
+/* Define the numerical age function using a high upper limit instead of infinity */
+numerical_age(z) := quad_qags(1 / ((1 + zp) * H(zp)), zp, z, 1000)[1];
+
+/* Test. */
+universe_age : numerical_age(0); /* Total age of the universe today */
+oldest_galaxy_age : numerical_age(14.32);
+emitted_age_14_32 : universe_age - oldest_galaxy_age; /* Time since light emitted from z = 14.32 */
+
